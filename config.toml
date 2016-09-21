@@ -1,0 +1,96 @@
+baseurl = "http://www.tutysara.net/"
+title = "tutysara's space"
+author = "tutysara"
+# Shown in the side menu
+copyright = "&copy; 2016. All rights reserved."
+canonifyurls = true
+paginate = 10
+
+[indexes]
+  tag = "tags"
+  topic = "topics"
+[taxonomies]
+  tag = "tags"
+
+[params]
+  # Shown in the home page
+  subtitle = "what I learned that is worth sharing and useful for me/world or both"
+  brand = "tutysara"
+  googleAnalytics = "UA-34510369-1"
+  disqus = "tutysarablog"
+  # CSS name for highlight.js
+  highlightjs = "androidstudio"
+  dateFormat = "02 Jan 2006, 15:04"
+  # Include any custom CSS and/or JS files
+  # (relative to /static folder)
+  custom_css = ["css/my.css"]
+  custom_js = ["js/my.js"]
+
+[menu]
+  # Shown in the side menu.
+  [[menu.main]]
+    name = "Home"
+    pre = "<i class='fa fa-home fa-fw'></i>"
+    weight = 0
+    identifier = "home"
+    url = "/"
+  [[menu.main]]
+    name = "Post"
+    pre = "<i class='fa fa-list fa-fw'></i>"
+    weight = 1
+    identifier = "post"
+    url = "/post/"
+  [[menu.main]]
+    name = "About"
+    pre = "<i class='fa fa-user fa-fw'></i>"
+    weight = 2
+    identifier = "about"
+    url = "/about/"
+  [[menu.main]]
+    name = "Contact"
+    pre = "<i class='fa fa-phone fa-fw'></i>"
+    weight = 3
+    url = "/contact/"
+
+[social]
+  # Link your social networking accounts to the side menu
+  # by entering your username or ID.
+
+  # SNS microblogging
+  twitter = "tutysara"
+  # gnusocial = "*" # Specify href (e.g. https://quitter.se/yourusername)
+  # facebook = "*"
+  # googleplus = "*"
+  # weibo = "*"
+
+  # #SNS photo/video sharing
+  # instagram = "*"
+  # flickr = "*"
+  # pinterest = "*"
+  # youtube = "*"
+  # vimeo = "*"
+  # vine = "*"
+  # slideshare = "*"
+
+  # # SNS career oriented
+  # linkedin = "*"
+  # xing = "*"
+
+  # # SNS news
+  # reddit = "*"
+  # hackernews = "*"
+
+  # Techie
+  github = "tutysara"
+  # bitbucket = "*"
+  # stackoverflow = "*"
+  # serverfault = "*"
+
+  # # Gaming
+  # steam = "*"
+
+  # # Music
+  # lastfm = "*"
+
+  # # Other
+  # keybase = "*"
