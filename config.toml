@@ -1,96 +1,83 @@
+# hostname (and path) to the root eg. http://spf13.com/
 baseurl = "http://www.tutysara.net/"
-title = "tutysara's space"
-author = "tutysara"
-# Shown in the side menu
-copyright = "&copy; 2016. All rights reserved."
-canonifyurls = true
-paginate = 10
+
+# Site title
+title = "TUTYSARA'S SPACE"
+
+# Copyright
+copyright = "(c) 2016 tutysara."
+
+# Language
+languageCode = "en-EN"
+
+# Metadata format
+# "yaml", "toml", "json"
+metaDataFormat = "yaml"
+
+# Theme to use (located in /themes/THEMENAME/)
+theme = "hugo-bootstrap"
+
+# Pagination
+paginate = 3
+paginatePath = "page"
+
+# Enable Disqus integration
+disqusShortname = "tutysarablog"
+
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
+    code = "/:slug/"
+
+[taxonomies]
+    tag = "tags"
+    topic = "topics"
 
 [indexes]
-  tag = "tags"
-  topic = "topics"
-[taxonomies]
-  tag = "tags"
+    tag = "tags"
+    topic = "topics"
 
+[author]
+    name = "tutysara"
+    email = "tutysara att google mail.com"
+
+#
+# All parameters below here are optional and can be mixed and matched.
+#
 [params]
-  # Shown in the home page
-  subtitle = "what I learned that is worth sharing and useful for me/world or both"
-  brand = "tutysara"
-  googleAnalytics = "UA-34510369-1"
-  disqus = "tutysarablog"
-  # CSS name for highlight.js
-  highlightjs = "androidstudio"
-  dateFormat = "02 Jan 2006, 15:04"
-  # Include any custom CSS and/or JS files
-  # (relative to /static folder)
-  custom_css = ["css/my.css"]
-  custom_js = ["js/my.js"]
+    # You can use markdown here.
+    brand = "tutysara"
+    topline = "what I learned that is worth sharing and useful for me/world or both"
+    footline = "code with <i class='fa fa-heart'></i>"
 
-[menu]
-  # Shown in the side menu.
-  [[menu.main]]
-    name = "Home"
-    pre = "<i class='fa fa-home fa-fw'></i>"
-    weight = 0
-    identifier = "home"
-    url = "/"
-  [[menu.main]]
-    name = "Post"
-    pre = "<i class='fa fa-list fa-fw'></i>"
-    weight = 1
-    identifier = "post"
-    url = "/post/"
-  [[menu.main]]
-    name = "About"
-    pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 2
-    identifier = "about"
-    url = "/about/"
-  [[menu.main]]
-    name = "Contact"
-    pre = "<i class='fa fa-phone fa-fw'></i>"
-    weight = 3
-    url = "/contact/"
+    # Show a sidebar menu
+    showRightSidebar = true
 
-[social]
-  # Link your social networking accounts to the side menu
-  # by entering your username or ID.
+    # Text for the top menu link, which goes the root URL for the site.
+    # Default (if omitted) is "Home".
+    home = "home"
 
-  # SNS microblogging
-  twitter = "tutysara"
-  # gnusocial = "*" # Specify href (e.g. https://quitter.se/yourusername)
-  # facebook = "*"
-  # googleplus = "*"
-  # weibo = "*"
+    # Select a syntax highight.
+    # Check the static/css/highlight directory for options.
+    highlight = "default"
 
-  # #SNS photo/video sharing
-  # instagram = "*"
-  # flickr = "*"
-  # pinterest = "*"
-  # youtube = "*"
-  # vimeo = "*"
-  # vine = "*"
-  # slideshare = "*"
+    # Google Analytics.
+    googleAnalytics = "UA-34510369-1"
 
-  # # SNS career oriented
-  # linkedin = "*"
-  # xing = "*"
+    # Sidebar social links.
+    github = "tutysara" # Your Github profile ID
+    bitbucket = "test" # Your Bitbucket profile ID
+    # linkedin = "" # Your LinkedIn profile ID (from public URL)
+    googleplus = "tutysara" # Your Google+ profile ID
+    # facebook = "" # Your Facebook profile ID
+    twitter = "tutysara" # Your Twitter profile ID
+    # youtube = ""  # Your Youtube channel ID
+    # flattr = ""  # populate with your flattr uid
 
-  # # SNS news
-  # reddit = "*"
-  # hackernews = "*"
-
-  # Techie
-  github = "tutysara"
-  # bitbucket = "*"
-  # stackoverflow = "*"
-  # serverfault = "*"
-
-  # # Gaming
-  # steam = "*"
-
-  # # Music
-  # lastfm = "*"
-
-  # # Other
-  # keybase = "*"
+[blackfriday]
+    angledQuotes = true
+    fractions = false
+    hrefTargetBlank = false
+    latexDashes = true
+    plainIdAnchors = true
+    extensions = []
+    extensionmask = []
