@@ -6,7 +6,7 @@
     </div>
     {{ end }}
 
-    <div class="section taxonomies well" style="width: 75%;">
+    <div class="section taxonomies well">
         <div class="list-group-item-heading">
             <b>
                 <i class="fa fa-tags fa-lg" aria-hidden="true"></i>
@@ -38,7 +38,7 @@
     {{ range $key, $value := .Site.Taxonomies }}
     {{ $len := len $value }}
     {{ if (not ( eq $len 0 ) ) }}
-    <div class="section taxonomies well"  style="width: 75%;">
+    <div class="section taxonomies well">
         <header>
             <div class="title list-group-item-heading">
                 <b>
