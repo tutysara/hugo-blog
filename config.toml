@@ -58,7 +58,7 @@ disqusShortname = "tutysarablog"
 
     # Select a syntax highight.
     # Check the static/css/highlight directory for options.
-    highlight = "default"
+    highlight = "github"
 
     # Google Analytics.
     googleAnalytics = "UA-34510369-1"

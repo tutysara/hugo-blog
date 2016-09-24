@@ -12,3 +12,8 @@ URL = "/post"
 Name = "Tags"
 Title = "Show list of tags"
 URL = "/tags"
+
+[zfeeds]
+Name = "Feeds"
+IconClass = "fa-rss"
+URL = "/index.xml"
