@@ -25,7 +25,7 @@ paginatePath = "page"
 disqusShortname = "tutysarablog"
 
 [permalinks]
-    post = "/:year/:month/:day/:slug/"
+    post = "posts/:year/:month/:day/:slug/"
     code = "/:slug/"
 
 [taxonomies]
@@ -47,7 +47,7 @@ disqusShortname = "tutysarablog"
     # You can use markdown here.
     brand = "tutysara"
     topline = "what I learned that is worth sharing and useful for me/world or both"
-    footline = "code with <i class='fa fa-heart'></i>"
+    footline = "coded with <i class='fa fa-heart'></i> using <a href='http://gohugo.io/hugo'>hugo</a> and heavily customized hugo-bootstrap theme"
 
     # Show a sidebar menu
     showRightSidebar = true
@@ -65,7 +65,7 @@ disqusShortname = "tutysarablog"
 
     # Sidebar social links.
     github = "tutysara" # Your Github profile ID
-    bitbucket = "test" # Your Bitbucket profile ID
+    # bitbucket = "test" # Your Bitbucket profile ID
     # linkedin = "" # Your LinkedIn profile ID (from public URL)
     googleplus = "tutysara" # Your Google+ profile ID
     # facebook = "" # Your Facebook profile ID
