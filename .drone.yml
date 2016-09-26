@@ -2,7 +2,6 @@ clone:
   recursive: true
   submodule_update_remote: true
 build:
-  image: golang
+  image: jojomi/hugo:latest
   commands:
-    - go get -v github.com/spf13/hugo
     - hugo 
