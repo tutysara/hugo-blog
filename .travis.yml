@@ -1,0 +1,16 @@
+language: go
+sudo: required
+env:
+  global:
+  - GH_REF: github.com/tutysara/tutysara.github.com.git
+  - REPO: tutysara.github.com
+  - GH_REPO: github.com/tutysara/${REPO}.git
+  - secure: jVAR9KJC5gcDualzJr8CSdStWK/pv4wqq1Lx1NxuKo7OoGqZY15TTHeIkD/RGD/gbduo6mrYfTLMTLiSn6HoVGjiAv+U99KxVurtN0psJazQSuFxsMCaj+E+9Uoyfa98nFyyVqqlIu8Gae9HOpro47mrf+QkQ7HLsS/I3DLfL+aKyeXtU5v0FWRRGBiHBp1n3xR49urieUzDyrUFWW2mHssWpqMsD6K8aLz0nFD68R7OSxnZMyc8Dg2a4EqdvMcYRn0Be2TAFUMX1QcxYMxz3dm4N5vlPSlGGYBgxd6atI9ttb+LeJJHGO/cIUrgkcKinhgeTBt6mDWUR0OKzKtdtpbO+iQWRm5Vc30lG9Gt5jIirNa1zuFPRVYbPg13dF7YThxKGH1A8wsun/si3dLy9Q3EBmTBmGaWwvccBZGpwlqYorfR4n1tph3wDkdR5P4JuuY1Bl2MPZKfdGVIPlixflCPlAU3/WlA3KdEikh3JBWtA13J6LBLXpJWTzEMb0yizeHsicmdggnohjgZFU4Se5ImCqY7ACD7c0EcVbTZlzFQ/KroE48+YMkmhXOGdrg8nYz+XFFqhmlxbqwq3NNAzCnuwb7M3m9KuMu9sHlGZS4YPEd3kP/TxD9EJUBK3nO9ifHxhBtRo4UCfRpP51MIn4mR1U2aI8mU3IDED+LBJpg=
+git:
+  submodules: true
+install:
+- go get -v github.com/spf13/hugo
+script: bash ./deploy.sh
+notifications:
+  email:
+    on_failure: always
