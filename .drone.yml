@@ -1,5 +1,6 @@
 clone:
   recursive: true
+  submodule_update_remote: true
 build:
   image: golang
   commands:
