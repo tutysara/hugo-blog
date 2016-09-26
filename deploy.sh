@@ -9,6 +9,11 @@ git config --global user.name "tutysara"
 hugo -t hugo-bootstrap # if using a theme, replace by `hugo -t <yourtheme>`
 
 git clone https://github.com/tutysara/tutysara.github.com.git
+# clean up repo
+cd  ${REPO}
+rm -rf *
+cd ..
+# copy files to commit
 cp -R public/* ${REPO}
 cd ${REPO}
 git remote
