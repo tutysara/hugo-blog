@@ -1,0 +1,26 @@
+box: debian
+build:
+  steps:
+    - script:
+        name: install git
+        code: |
+          apt-get update && apt-get install git -y
+    - script:
+        name: initialize git submodules
+        code: |
+            git submodule update --init --recursive
+    - arjen/hugo-build:        
+        theme: hugo-bootstrap
+deploy:
+  steps:
+    - script:
+        name: install git
+        code: |
+          apt-get update && apt-get install git -y
+    - leipert/git-push:
+        gh_oauth: $GIT_TOKEN
+        basedir: public
+        clean_removed_files: true
+        branch: master
+        repo: tutysara/tutysara.github.io
+        gh_pages_domain: tutysara.net
