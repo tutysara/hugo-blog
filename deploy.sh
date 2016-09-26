@@ -1,7 +1,9 @@
 #!/bin/bash
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
-
+# setup constants
+REPO="tutysara.github.com"
+GH_REPO="github.com/tutysara/${REPO}.git"
 git config --global user.email "tutysara-travis-ci@gmail.com"
 git config --global user.name "tutysara"
 
