@@ -22,5 +22,5 @@ deploy:
         basedir: public
         clean_removed_files: true
         branch: master
-        repo: tutysara/tutysara.github.io
+        repo: tutysara/tutysara.github.com
         gh_pages_domain: tutysara.net
