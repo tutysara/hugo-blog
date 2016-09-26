@@ -1,0 +1,7 @@
+clone:
+  recursive: true
+build:
+  image: golang
+  commands:
+    - go get -v github.com/spf13/hugo
+    - hugo 
