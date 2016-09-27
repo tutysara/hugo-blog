@@ -5,7 +5,7 @@ baseurl = "http://www.tutysara.net/"
 title = "TUTYSARA'S SPACE"
 
 # Copyright
-copyright = "(c) 2016 tutysara."
+copyright = "(c) 2016 tutysara"
 
 # Language
 languageCode = "en-EN"
