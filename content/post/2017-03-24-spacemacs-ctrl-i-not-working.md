@@ -1,5 +1,5 @@
 +++
-title = "Spacemacs Ctrl+i fix "
+title = "Spacemacs Ctrl-i fix "
 date = "2017-03-24T09:07:41+05:30"
 tags = ["self notes", "spacemacs"]
 +++
