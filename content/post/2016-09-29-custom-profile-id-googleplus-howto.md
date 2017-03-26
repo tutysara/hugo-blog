@@ -1,7 +1,6 @@
 ---
 author: tutysara
 date: 2016-09-29T04:30:51+05:30
-description: description
 keywords:
 - hugo
 - google plus
