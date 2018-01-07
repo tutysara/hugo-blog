@@ -17,6 +17,6 @@ We have the troubleshooting steps there
     dotspacemacs-distinguish-gui-tab ;; should be t
     (lookup-key key-translation-map [?\C-i]) ;; should be spacemacs/translate-C-i
 
-In my system dotspacemacs-distinguish-gui-tab is set as nil.
+In my system dotspacemacs/user-configcemacs-distinguish-gui-tab is set as nil.
 
 So, this is the issue. I set this variable in .spacemacs file and refreshed and I could use Ctrl+i to move forward through the links
