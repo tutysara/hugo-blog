@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clojure on TUTYSARA&#39;S SPACE</title>
+    <link>http://www.tutysara.net/tags/clojure/</link>
+    <description>Recent content in Clojure on TUTYSARA&#39;S SPACE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>tutysara att google mail.com (tutysara)</managingEditor>
+    <webMaster>tutysara att google mail.com (tutysara)</webMaster>
+    <copyright>(c) 2016 tutysara</copyright>
+    <lastBuildDate>Fri, 05 Oct 2012 11:16:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.tutysara.net/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Correlation between INR values of different currencies</title>
+      <link>http://www.tutysara.net/posts/2012/10/05/correlation-between-inr-values-of-different-currencies/</link>
+      <pubDate>Fri, 05 Oct 2012 11:16:00 +0000</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2012/10/05/correlation-between-inr-values-of-different-currencies/</guid>
+      <description>Correlation between INR values of different currencies 2012-09-05 11:31  data clojure     This is an interesting take away example from the class which Anand is teaching at NIAS. Here we are trying to correlate between the INR values of various currencies like AUD, CNY (Chinese Yen), EUR, GBP (Great Britain Pound), JPY, SGD, USD and find the positive or negative correlations. The focus is on data collection and transformation.</description>
+    </item>
+    
+  </channel>
+</rss>

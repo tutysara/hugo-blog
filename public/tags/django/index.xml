@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Django on TUTYSARA&#39;S SPACE</title>
+    <link>http://www.tutysara.net/tags/django/</link>
+    <description>Recent content in Django on TUTYSARA&#39;S SPACE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>tutysara att google mail.com (tutysara)</managingEditor>
+    <webMaster>tutysara att google mail.com (tutysara)</webMaster>
+    <copyright>(c) 2016 tutysara</copyright>
+    <lastBuildDate>Wed, 30 Oct 2013 13:16:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.tutysara.net/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Django development on OSX using emacs</title>
+      <link>http://www.tutysara.net/posts/2013/10/30/django-development-on-osx-using-emacs/</link>
+      <pubDate>Wed, 30 Oct 2013 13:16:00 +0000</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2013/10/30/django-development-on-osx-using-emacs/</guid>
+      <description>I started following the Django tutorials by arun. I wanted to know about the related classes and quickly look into docs for the things that I code, I wanted an environment that is nice to newbies, helping with code completion and easy documentation lookup. I searched and found a huge list of options. Since I was begining with Django I wanted an environment that is much easier to setup, my first choice was pycharm, but unfortunately the community edition of pycharm doesn&amp;rsquo;t support Django - see this.</description>
+    </item>
+    
+  </channel>
+</rss>

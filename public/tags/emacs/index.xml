@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on TUTYSARA&#39;S SPACE</title>
+    <link>http://www.tutysara.net/tags/emacs/</link>
+    <description>Recent content in Emacs on TUTYSARA&#39;S SPACE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>tutysara att google mail.com (tutysara)</managingEditor>
+    <webMaster>tutysara att google mail.com (tutysara)</webMaster>
+    <copyright>(c) 2016 tutysara</copyright>
+    <lastBuildDate>Sat, 03 Sep 2016 14:25:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.tutysara.net/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Good Font for Spacemacs</title>
+      <link>http://www.tutysara.net/posts/2016/09/03/good-font-for-spacemacs/</link>
+      <pubDate>Sat, 03 Sep 2016 14:25:00 +0000</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2016/09/03/good-font-for-spacemacs/</guid>
+      <description>Spacemacs recommends using source code pro as the default font, infact this is the font set in .spacemacs file. If the font is not availale it is substituted for some other alternative. To find the font in use do C-u C-x = on my mac it was using Menlo font. DejavuSansMono looks better than Source code Pro on ubuntu and I switched to it in my ubuntu system. A list of top programming fonts can be found at Top programming fonts</description>
+    </item>
+    
+  </channel>
+</rss>

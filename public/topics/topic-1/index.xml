@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Topic 1 on TUTYSARA&#39;S SPACE</title>
+    <link>http://www.tutysara.net/topics/topic-1/</link>
+    <description>Recent content in Topic 1 on TUTYSARA&#39;S SPACE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>tutysara att google mail.com (tutysara)</managingEditor>
+    <webMaster>tutysara att google mail.com (tutysara)</webMaster>
+    <copyright>(c) 2016 tutysara</copyright>
+    <lastBuildDate>Sun, 26 Mar 2017 19:17:21 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.tutysara.net/topics/topic-1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fix isset error in Hugo 2 version</title>
+      <link>http://www.tutysara.net/posts/2017/03/26/fix-isset-error-in-hugo-2-version/</link>
+      <pubDate>Sun, 26 Mar 2017 19:17:21 +0530</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2017/03/26/fix-isset-error-in-hugo-2-version/</guid>
+      <description>I have setup automatic compiling and deploying of my blog using Travis.CI
+Recently I encountered a strange issue, the blog compiles and runs fine in my system but the site doesn&amp;rsquo;t come up after a Travis build.
+On investigation found this in the logs from Travis CI.
+Deploying updates to GitHub... Started building sites ... ERROR 2017/03/25 02:31:30 .Page&#39;s Use RSSlink is deprecated and will be removed in Hugo 0.21. RSSLink.</description>
+    </item>
+    
+    <item>
+      <title>How to create custom profile ID in googleplus</title>
+      <link>http://www.tutysara.net/posts/2016/09/29/how-to-create-custom-profile-id-in-googleplus/</link>
+      <pubDate>Thu, 29 Sep 2016 04:30:51 +0530</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2016/09/29/how-to-create-custom-profile-id-in-googleplus/</guid>
+      <description>I was writing my blog and added a link to google plus in the sidebar. I wanted to make a human readable/rememberable Id to use for my google plus page.
+I guess, planning to {use|add link} to google plus is a bad idea. I googled to find the steps to create a custom profile Id and landed in the documentation page &amp;ndash; Get a custom URL for your Google+ profile</description>
+    </item>
+    
+    <item>
+      <title>Automating hugo blog deployment to github pages using travis-ci</title>
+      <link>http://www.tutysara.net/posts/2016/09/27/automating-hugo-blog-deployment-to-github-pages-using-travis-ci/</link>
+      <pubDate>Tue, 27 Sep 2016 03:35:35 +0530</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2016/09/27/automating-hugo-blog-deployment-to-github-pages-using-travis-ci/</guid>
+      <description>Here are the steps I took to build and deploy my blog automatically using hugo and travis-ci to github pages
+I assume a hugo blog is already created and exist
+ Create .travis.yml file in the project directory with the following contents
+language: go sudo: required git: submodules: true install: - go get -v github.com/spf13/hugo script: bash ./deploy.sh notifications: email: on_failure: always  Generate and encrypt github token
+ create a access token in github as given here , this is for pushing the changes to the master branch of the user site install travis gem</description>
+    </item>
+    
+  </channel>
+</rss>

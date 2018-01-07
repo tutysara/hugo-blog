@@ -15,7 +15,10 @@ languageCode = "en-EN"
 metaDataFormat = "yaml"
 
 # Theme to use (located in /themes/THEMENAME/)
-theme = "hugo-bootstrap"
+#theme = "hugo-bootstrap"
+theme = "theme-beautifulhugo"
+
+googleAnalytics = "UA-34510369-1"
 
 # Pagination
 paginate = 3
@@ -28,17 +31,35 @@ disqusShortname = "tutysarablog"
     post = "posts/:year/:month/:day/:slug/"
     code = "/:slug/"
 
-[taxonomies]
-    tag = "tags"
-    topic = "topics"
+[Params]
+    subtitle = "what I learned that is worth sharing and useful for me/world or both"
+    logo = "img/avatar-icon.png"
+    favicon = "img/favicon.ico"
+    dateFormat = "January 2, 2006"
+    commit = true
+    rss = true
+    comments = true
+    readingTime = true
+    gcse = true
 
-[indexes]
-    tag = "tags"
-    topic = "topics"
-
-[author]
+[Author]
     name = "tutysara"
-    email = "tutysara att google mail.com"
+    website = "tutysara.net"
+    email = "tutysara at google mail.com"
+    googleplus = "+tutysara" # or xxxxxxxxxxxxxxxxxxxxx
+    github = "tutysara"
+    twitter = "tutysara"
+  
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
+
+[[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 3
 
 #
 # All parameters below here are optional and can be mixed and matched.
@@ -73,11 +94,4 @@ disqusShortname = "tutysarablog"
     # youtube = ""  # Your Youtube channel ID
     # flattr = ""  # populate with your flattr uid
 
-[blackfriday]
-    angledQuotes = true
-    fractions = false
-    hrefTargetBlank = false
-    latexDashes = true
-    plainIdAnchors = true
-    extensions = []
-    extensionmask = []
+

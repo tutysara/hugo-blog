@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on TUTYSARA&#39;S SPACE</title>
+    <link>http://www.tutysara.net/tags/</link>
+    <description>Recent content in Tags on TUTYSARA&#39;S SPACE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>tutysara att google mail.com (tutysara)</managingEditor>
+    <webMaster>tutysara att google mail.com (tutysara)</webMaster>
+    <copyright>(c) 2016 tutysara</copyright>
+    <lastBuildDate>Fri, 05 Oct 2012 11:16:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.tutysara.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Clojure</title>
+      <link>http://www.tutysara.net/tags/clojure/</link>
+      <pubDate>Fri, 05 Oct 2012 11:16:00 +0000</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data</title>
+      <link>http://www.tutysara.net/tags/data/</link>
+      <pubDate>Fri, 05 Oct 2012 11:16:00 +0000</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>http://www.tutysara.net/tags/django/</link>
+      <pubDate>Wed, 30 Oct 2013 13:16:00 +0000</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emacs</title>
+      <link>http://www.tutysara.net/tags/emacs/</link>
+      <pubDate>Sat, 03 Sep 2016 14:25:00 +0000</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/tags/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>General</title>
+      <link>http://www.tutysara.net/tags/general/</link>
+      <pubDate>Sun, 02 Sep 2012 16:14:00 +0000</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>http://www.tutysara.net/tags/github/</link>
+      <pubDate>Sun, 02 Sep 2012 16:14:00 +0000</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://www.tutysara.net/tags/hugo/</link>
+      <pubDate>Sun, 26 Mar 2017 19:17:21 +0530</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://www.tutysara.net/tags/python/</link>
+      <pubDate>Wed, 30 Oct 2013 13:16:00 +0000</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Self Notes</title>
+      <link>http://www.tutysara.net/tags/self-notes/</link>
+      <pubDate>Fri, 24 Mar 2017 09:07:41 +0530</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/tags/self-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spacemacs</title>
+      <link>http://www.tutysara.net/tags/spacemacs/</link>
+      <pubDate>Fri, 24 Mar 2017 09:07:41 +0530</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/tags/spacemacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tech</title>
+      <link>http://www.tutysara.net/tags/tech/</link>
+      <pubDate>Mon, 21 Oct 2013 15:25:00 +0000</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/tags/tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>http://www.tutysara.net/tags/web/</link>
+      <pubDate>Mon, 21 Oct 2013 15:25:00 +0000</pubDate>
+      <author>tutysara att google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/tags/web/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
