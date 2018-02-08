@@ -8,8 +8,11 @@ MSG=$(git log -1 --oneline)
 git config --global user.email "tutysara-travis-ci@gmail.com"
 git config --global user.name "tutysara"
 
+# get theme
+rm -rf themes/*
+git clone https://github.com/halogenica/beautifulhugo.git themes/theme-beautifulhugo
 # Build the project.
-hugo -t hugo-bootstrap # if using a theme, replace by `hugo -t <yourtheme>`
+hugo -t theme-beautifulhugo # if using a theme, replace by `hugo -t <yourtheme>`
 
 git clone https://github.com/tutysara/tutysara.github.com.git
 # clean up repo
