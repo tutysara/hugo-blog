@@ -27,8 +27,13 @@ paginatePath = "page"
 # Enable Disqus integration
 disqusShortname = "tutysarablog"
 
-#pygments
-#pygmentsUseClassic=true
+#chroma
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+# pygments
+#pygmentsStyle = "trac"
+#pygmentsUseClassic = true
 
 # hugo gen chromastyles --style=manni > syntax.css
 [permalinks]

@@ -58,6 +58,12 @@
   {{- end -}}
   <link rel="stylesheet" href="{{ "css/codeblock.css" | absURL }}" />
   
+  <style>
+  pre.highlight, .highlight > pre, td.code pre { 
+    border-left: 2px solid #76a2a9;
+  }     
+</style>
+
   {{- if .Site.Params.staticman.recaptcha -}}
   <script src='https://www.google.com/recaptcha/api.js'></script>
   {{- end -}}
