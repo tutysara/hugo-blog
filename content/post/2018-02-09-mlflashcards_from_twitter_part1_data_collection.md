@@ -27,8 +27,9 @@ So, the next step is to try scraping. We got [twitterscraper](https://github.com
 Scraping was an one step painless process with this tool.
 
 Install it using
-
-	pip install twitterscraper
+```bash
+pip install twitterscraper
+```
 
 Scrape the data matching a query using
 
@@ -41,11 +42,11 @@ The data is scraped and stored in a json file. The next step is preprocessing.
 Here we want to preprocess the data to learn about it and to process further. We will convert the data from json and read it into a dataframe.
 
 ### 2.1 Read the data
-
-	import codecs, json
-	with codecs.open('mlflashcards_tweets_large.json', 'r', 'utf-8') as f:
-		tweets = json.load(f, encoding='utf-8')
-
+```python
+import codecs, json
+with codecs.open('mlflashcards_tweets_large.json', 'r', 'utf-8') as f:
+	tweets = json.load(f, encoding='utf-8')
+```
 Look at a sample data
 
 	t = tweets[5]
@@ -64,46 +65,46 @@ output
 	 'user': 'chrisalbon'}
 
 ###	2.2 Write and test few utility methods to extract data
+```python
+## get full tweet url
+def get_tweet_url(tweet):
+	return 'https://twitter.com' + tweet['url']
 
-	## get full tweet url
-	def get_tweet_url(tweet):
-    	return 'https://twitter.com' + tweet['url']
+#test
+tweet_url = get_tweet_url(t)
+print(tweet_url)
 
-    #test
-    tweet_url = get_tweet_url(t)
-	print(tweet_url)
+# output: https://twitter.com/chrisalbon/status/960977759915851776
 
-	# output: https://twitter.com/chrisalbon/status/960977759915851776
+## get tweet text (text without url)
+def get_tweet_text(tweet):
+    text = tweet['text']
+    res = re.search('(.*) https.*', text)
+    if res:
+        text = res.group(1)
+    else:
+        text = None
+    return text
 
-	## get tweet text (text without url)
-	def get_tweet_text(tweet):
-	    text = tweet['text']
-	    res = re.search('(.*) https.*', text)
-	    if res:
-	        text = res.group(1)
-	    else:
-	        text = None
-	    return text
-
-	#test
-	get_tweet_text(t)
-	# output: 'Alpha In Ridge Regression'
-
+#test
+get_tweet_text(t)
+# output: 'Alpha In Ridge Regression'
+```
 ###	2.3 Convert to dataframe
-
-	rows = []
-	for tweet in tweets[:]:
-	    row = {"id": tweet['id'],
-	            "likes": tweet['likes'],
-	            "replies": tweet['replies'],
-	            "retweets": tweet['retweets'],
-	            "timestamp": tweet['timestamp'],
-	            "url": get_tweet_url(tweet),
-	            "text": get_tweet_text(tweet)}
-    rows.append(row)
-    df = pd.DataFrame.from_dict(rows)
-	df
-
+```python
+rows = []
+for tweet in tweets[:]:
+    row = {"id": tweet['id'],
+            "likes": tweet['likes'],
+            "replies": tweet['replies'],
+            "retweets": tweet['retweets'],
+            "timestamp": tweet['timestamp'],
+            "url": get_tweet_url(tweet),
+            "text": get_tweet_text(tweet)}
+rows.append(row)
+df = pd.DataFrame.from_dict(rows)
+df
+```
 looks something like this
 
 	 	id 	likes 	replies 	retweets 	text 	timestamp 	url
@@ -112,23 +113,23 @@ looks something like this
 	2 	961666291189743616 	23 	0 	5 	Chi-Squared 	2018-02-08T18:21:25 	https://twitter.com/chrisalbon/status/96166629...
 
 ###	2.4 Extract image url from tweet url
+```python
+def get_img_url(tweet_url):
+    page_data = requests.get(tweet_url).text
+    res = re.search('data-image-url="(.*)"', page_data)
+    if res:
+        img_url = res.group(1)
+    else:
+        img_url = None
+    return img_url
 
-	def get_img_url(tweet_url):
-	    page_data = requests.get(tweet_url).text
-	    res = re.search('data-image-url="(.*)"', page_data)
-	    if res:
-	        img_url = res.group(1)
-	    else:
-	        img_url = None
-	    return img_url
+#test
+get_img_url(tweet_url)
+# output: 'https://pbs.twimg.com/media/DViGZR3VoAAAoNf.png'
 
-	#test
-	get_img_url(tweet_url)
-	# output: 'https://pbs.twimg.com/media/DViGZR3VoAAAoNf.png'
-
-	df['img_url'] = [get_img_url(tweet_url)  for tweet_url in df.url]
-	df.tail()
-
+df['img_url'] = [get_img_url(tweet_url)  for tweet_url in df.url]
+df.tail()
+```
 looks something like this
 
 	 	id 	likes 	replies 	retweets 	text 	timestamp 	url 	img_url
@@ -138,9 +139,9 @@ looks something like this
 
 ## Step 3 -- Write to csv
 	Its time to save it to csv for further processing
-
-		df.to_csv("chrisalbon_mlflashcards.csv")
-
+```python
+df.to_csv("chrisalbon_mlflashcards.csv")
+```
 
 By this time I got other ideas to test. Instead of just downloading the images, I wanted to anaylze the tweets to know more about it using the data we have. 
 

@@ -50,7 +50,7 @@ pygmentsUseClasses = true
     comments = true
     readingTime = true
     gcse = true
-
+    #useHLJS = true
 [Author]
     name = "tutysara"
     website = "tutysara.net"
