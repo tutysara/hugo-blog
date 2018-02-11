@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sklearn on TUTYSARA&#39;S SPACE</title>
+    <link>http://www.tutysara.net/tags/sklearn/</link>
+    <description>Recent content in Sklearn on TUTYSARA&#39;S SPACE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>tutysara at google mail.com (tutysara)</managingEditor>
+    <webMaster>tutysara at google mail.com (tutysara)</webMaster>
+    <copyright>(c) 2018 tutysara</copyright>
+    <lastBuildDate>Wed, 07 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.tutysara.net/tags/sklearn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Themes and Extensions for Jupyter notebook</title>
+      <link>http://www.tutysara.net/posts/2018/02/07/themes-and-extensions-for-jupyter-notebook/</link>
+      <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/02/07/themes-and-extensions-for-jupyter-notebook/</guid>
+      <description>I am taking the wonderful fast.ai (http://course.fast.ai/) course thought by Jermey Howard and Rachel. We use jupyter notebooks in classes and it is always nice to see how Jermey&amp;rsquo;s notebook looks.
+It has few tweaks like
+ collapsible headings better tables and fonts  Learnt that he uses a themes for the visual customizations and an extensions to allow collapsing of headers from his reply in forums (http://forums.fast.ai/t/collapsable-expandable-jupyter-cells/205/5)
+The theme script can be installed from this github repo (https://github.</description>
+    </item>
+    
+    <item>
+      <title>Useful Functions in Fastai library</title>
+      <link>http://www.tutysara.net/posts/2018/02/07/useful-functions-in-fastai-library/</link>
+      <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/02/07/useful-functions-in-fastai-library/</guid>
+      <description>Here are some useful functions from fastai library ordered by the lessons in which they are covered
+ Video 1
+ Notebook &amp;ndash; link
+ train_cat()
+ proc_df()
+  Video 2
+ draw_tree()    </description>
+    </item>
+    
+    <item>
+      <title>Use Skipgrams with sklearn CountVectorizer and TfidfVectorizer</title>
+      <link>http://www.tutysara.net/posts/2018/01/07/use-skipgrams-with-sklearn-countvectorizer-and-tfidfvectorizer/</link>
+      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/01/07/use-skipgrams-with-sklearn-countvectorizer-and-tfidfvectorizer/</guid>
+      <description>We don&amp;rsquo;t have an implementation for skipgrams in sklearn. This post covers how to use the skipgram function in nltk with sklearn&amp;rsquo;s CountVectorizer and TfidfVectorizer
+We are going to create a skipgram tokenizer that can be passed to the tokenizer parameter of the vectorizer.
+Create a basic tokenizer that can split the original strings to tokesn. Tokenizer can be just .split() or a function to filter non-alpahbets etc. We can use tokenizer as below</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,9 +6,9 @@
     <description>Recent content in Spacemacs on TUTYSARA&#39;S SPACE</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
-    <managingEditor>tutysara att google mail.com (tutysara)</managingEditor>
-    <webMaster>tutysara att google mail.com (tutysara)</webMaster>
-    <copyright>(c) 2016 tutysara</copyright>
+    <managingEditor>tutysara at google mail.com (tutysara)</managingEditor>
+    <webMaster>tutysara at google mail.com (tutysara)</webMaster>
+    <copyright>(c) 2018 tutysara</copyright>
     <lastBuildDate>Fri, 24 Mar 2017 09:07:41 +0530</lastBuildDate>
     
 	<atom:link href="http://www.tutysara.net/tags/spacemacs/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +18,7 @@
       <title>Spacemacs Ctrl-i fix </title>
       <link>http://www.tutysara.net/posts/2017/03/24/spacemacs-ctrl-i-fix/</link>
       <pubDate>Fri, 24 Mar 2017 09:07:41 +0530</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2017/03/24/spacemacs-ctrl-i-fix/</guid>
       <description>Spacemacs uses Ctlr+o to move backward to the last edited location and Ctrl+i to move foward after going back using Ctrl+o similar to Vim.
 I found that Ctrl+o works but Ctrl+i doesn&amp;rsquo;t moves forward through the edit locations. I had the same issue in OSX/emacs 25.1 and in ubuntu/emacs25.1.

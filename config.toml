@@ -28,7 +28,7 @@ paginatePath = "page"
 disqusShortname = "tutysarablog"
 
 #pygments
-pygmentsUseClassic=true
+#pygmentsUseClassic=true
 
 # hugo gen chromastyles --style=manni > syntax.css
 [permalinks]

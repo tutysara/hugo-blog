@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.tutysara.net/posts/2018/02/11/machine-learning-flashcards-from-twitter----part-2-data-analysis-and-download/</loc>
+    <lastmod>2018-02-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.tutysara.net/posts/2018/02/09/machine-learning-flashcards-from-twitter----part-1-data-collection-and-preprocessing/</loc>
+    <lastmod>2018-02-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.tutysara.net/posts/2018/02/07/deep-down-the-decision-tree/</loc>
+    <lastmod>2018-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.tutysara.net/posts/2018/02/07/themes-and-extensions-for-jupyter-notebook/</loc>
+    <lastmod>2018-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.tutysara.net/posts/2018/02/07/useful-functions-in-fastai-library/</loc>
+    <lastmod>2018-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.tutysara.net/posts/2018/01/07/use-skipgrams-with-sklearn-countvectorizer-and-tfidfvectorizer/</loc>
+    <lastmod>2018-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.tutysara.net/posts/2017/03/26/fix-isset-error-in-hugo-2-version/</loc>
     <lastmod>2017-03-26T19:17:21+05:30</lastmod>
   </url>
@@ -57,6 +87,11 @@
   </url>
   
   <url>
+    <loc>http://www.tutysara.net/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.tutysara.net/tags/clojure/</loc>
     <lastmod>2012-10-05T11:16:00+00:00</lastmod>
     <priority>0</priority>
@@ -85,6 +120,12 @@
   </url>
   
   <url>
+    <loc>http://www.tutysara.net/tags/fastai/</loc>
+    <lastmod>2018-02-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.tutysara.net/tags/general/</loc>
     <lastmod>2012-09-02T16:14:00+00:00</lastmod>
     <priority>0</priority>
@@ -103,20 +144,32 @@
   </url>
   
   <url>
+    <loc>http://www.tutysara.net/tags/machine-learning/</loc>
+    <lastmod>2018-02-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.tutysara.net/post/</loc>
-    <lastmod>2017-03-26T19:17:21+05:30</lastmod>
+    <lastmod>2018-02-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.tutysara.net/tags/python/</loc>
-    <lastmod>2013-10-30T13:16:00+00:00</lastmod>
+    <lastmod>2018-02-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.tutysara.net/tags/self-notes/</loc>
     <lastmod>2017-03-24T09:07:41+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.tutysara.net/tags/sklearn/</loc>
+    <lastmod>2018-02-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -128,7 +181,7 @@
   
   <url>
     <loc>http://www.tutysara.net/</loc>
-    <lastmod>2017-03-26T19:17:21+05:30</lastmod>
+    <lastmod>2018-02-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -145,14 +198,8 @@
   </url>
   
   <url>
-    <loc>http://www.tutysara.net/topics/topic-1/</loc>
-    <lastmod>2017-03-26T19:17:21+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.tutysara.net/topics/</loc>
-    <lastmod>2017-03-26T19:17:21+05:30</lastmod>
+    <loc>http://www.tutysara.net/tags/twitter/</loc>
+    <lastmod>2018-02-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

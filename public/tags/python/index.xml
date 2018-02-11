@@ -6,19 +6,86 @@
     <description>Recent content in Python on TUTYSARA&#39;S SPACE</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
-    <managingEditor>tutysara att google mail.com (tutysara)</managingEditor>
-    <webMaster>tutysara att google mail.com (tutysara)</webMaster>
-    <copyright>(c) 2016 tutysara</copyright>
-    <lastBuildDate>Wed, 30 Oct 2013 13:16:00 +0000</lastBuildDate>
+    <managingEditor>tutysara at google mail.com (tutysara)</managingEditor>
+    <webMaster>tutysara at google mail.com (tutysara)</webMaster>
+    <copyright>(c) 2018 tutysara</copyright>
+    <lastBuildDate>Sun, 11 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.tutysara.net/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Machine Learning Flashcards from Twitter -- Part 2 Data Analysis and Download</title>
+      <link>http://www.tutysara.net/posts/2018/02/11/machine-learning-flashcards-from-twitter----part-2-data-analysis-and-download/</link>
+      <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/02/11/machine-learning-flashcards-from-twitter----part-2-data-analysis-and-download/</guid>
+      <description>This is the analysis part where we do a small analysis to find
+ Which are the most important/popular tweets Whether older materials covered important concepts than recent tweets  Load the necessary libs %load_ext autoreload %autoreload 2 %matplotlib inline import pandas as pd pd.set_option(&amp;quot;display.width&amp;quot;, 150) import requests import re import matplotlib.pyplot as plt import matplotlib.image as mpimg from pathlib import Path  Load csv df = pd.read_csv(&amp;quot;chrisalbon_mlflashcards.csv&amp;quot;) df[&#39;text&#39;].fillna(&#39;&#39;, inplace=True)  df.</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning Flashcards from Twitter -- Part 1 Data Collection and Preprocessing</title>
+      <link>http://www.tutysara.net/posts/2018/02/09/machine-learning-flashcards-from-twitter----part-1-data-collection-and-preprocessing/</link>
+      <pubDate>Fri, 09 Feb 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/02/09/machine-learning-flashcards-from-twitter----part-1-data-collection-and-preprocessing/</guid>
+      <description>I was searching the net for mlflashcards, I found this incredible machine learning flashcard tweet series from Chris Albon. It looks pretty and covers a lot of ground, Got a thought &amp;ndash; why not download them for later use? I thought it would be a fun exercise to start the weekend and jumped into action.
+Step 1 &amp;ndash; Collect/Scrape data from twitter I evaluated using twitter api using tweetpy, but it has its own limitation aka we can search only a week worth of data which is not good for our use case.</description>
+    </item>
+    
+    <item>
+      <title>Deep Down the Decision Tree</title>
+      <link>http://www.tutysara.net/posts/2018/02/07/deep-down-the-decision-tree/</link>
+      <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/02/07/deep-down-the-decision-tree/</guid>
+      <description>Understanding How the split is made and the algorithms covered. I am taking the wonderful fast.ai (http://course.fast.ai/) course thought by Jermey Howard and Rachel. DecisionTrees (RandomForest) is covered in the second video (link)  Where they discuss on how the split is made</description>
+    </item>
+    
+    <item>
+      <title>Themes and Extensions for Jupyter notebook</title>
+      <link>http://www.tutysara.net/posts/2018/02/07/themes-and-extensions-for-jupyter-notebook/</link>
+      <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/02/07/themes-and-extensions-for-jupyter-notebook/</guid>
+      <description>I am taking the wonderful fast.ai (http://course.fast.ai/) course thought by Jermey Howard and Rachel. We use jupyter notebooks in classes and it is always nice to see how Jermey&amp;rsquo;s notebook looks.
+It has few tweaks like
+ collapsible headings better tables and fonts  Learnt that he uses a themes for the visual customizations and an extensions to allow collapsing of headers from his reply in forums (http://forums.fast.ai/t/collapsable-expandable-jupyter-cells/205/5)
+The theme script can be installed from this github repo (https://github.</description>
+    </item>
+    
+    <item>
+      <title>Useful Functions in Fastai library</title>
+      <link>http://www.tutysara.net/posts/2018/02/07/useful-functions-in-fastai-library/</link>
+      <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/02/07/useful-functions-in-fastai-library/</guid>
+      <description>Here are some useful functions from fastai library ordered by the lessons in which they are covered
+ Video 1
+ Notebook &amp;ndash; link
+ train_cat()
+ proc_df()
+  Video 2
+ draw_tree()    </description>
+    </item>
+    
+    <item>
+      <title>Use Skipgrams with sklearn CountVectorizer and TfidfVectorizer</title>
+      <link>http://www.tutysara.net/posts/2018/01/07/use-skipgrams-with-sklearn-countvectorizer-and-tfidfvectorizer/</link>
+      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/01/07/use-skipgrams-with-sklearn-countvectorizer-and-tfidfvectorizer/</guid>
+      <description>We don&amp;rsquo;t have an implementation for skipgrams in sklearn. This post covers how to use the skipgram function in nltk with sklearn&amp;rsquo;s CountVectorizer and TfidfVectorizer
+We are going to create a skipgram tokenizer that can be passed to the tokenizer parameter of the vectorizer.
+Create a basic tokenizer that can split the original strings to tokesn. Tokenizer can be just .split() or a function to filter non-alpahbets etc. We can use tokenizer as below</description>
+    </item>
+    
+    <item>
       <title>Django development on OSX using emacs</title>
       <link>http://www.tutysara.net/posts/2013/10/30/django-development-on-osx-using-emacs/</link>
       <pubDate>Wed, 30 Oct 2013 13:16:00 +0000</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2013/10/30/django-development-on-osx-using-emacs/</guid>
       <description>I started following the Django tutorials by arun. I wanted to know about the related classes and quickly look into docs for the things that I code, I wanted an environment that is nice to newbies, helping with code completion and easy documentation lookup. I searched and found a huge list of options. Since I was begining with Django I wanted an environment that is much easier to setup, my first choice was pycharm, but unfortunately the community edition of pycharm doesn&amp;rsquo;t support Django - see this.</description>
     </item>

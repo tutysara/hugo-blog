@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on TUTYSARA&#39;S SPACE</title>
+    <link>http://www.tutysara.net/categories/</link>
+    <description>Recent content in Categories on TUTYSARA&#39;S SPACE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>tutysara at google mail.com (tutysara)</managingEditor>
+    <webMaster>tutysara at google mail.com (tutysara)</webMaster>
+    <copyright>(c) 2018 tutysara</copyright>
+    
+	<atom:link href="http://www.tutysara.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Machine Learning Flashcards from Twitter -- Part 1 Data Collection and Preprocessing</title>
+  <meta property="og:title" content="Machine Learning Flashcards from Twitter -- Part 1 Data Collection and Preprocessing" />
+  <meta name="twitter:title" content="Machine Learning Flashcards from Twitter -- Part 1 Data Collection and …" />
+  <meta name="description" content="I was searching the net for mlflashcards, I found this incredible machine learning flashcard tweet series from Chris Albon. It looks pretty and covers a lot of ground, Got a thought &ndash; why not download them for later use? I thought it would be a fun exercise to start the weekend and jumped into action.
+Step 1 &ndash; Collect/Scrape data from twitter I evaluated using twitter api using tweetpy, but it has its own limitation aka we can search only a week worth of data which is not good for our use case.">
+  <meta property="og:description" content="I was searching the net for mlflashcards, I found this incredible machine learning flashcard tweet series from Chris Albon. It looks pretty and covers a lot of ground, Got a thought &ndash; why not download them for later use? I thought it would be a fun exercise to start the weekend and jumped into action.
+Step 1 &ndash; Collect/Scrape data from twitter I evaluated using twitter api using tweetpy, but it has its own limitation aka we can search only a week worth of data which is not good for our use case.">
+  <meta name="twitter:description" content="I was searching the net for mlflashcards, I found this incredible machine learning flashcard tweet series from Chris Albon. It looks pretty and covers a lot of ground, Got a thought &ndash; why not …">
+  <meta name="author" content="tutysara"/>
+  <link href='http://www.tutysara.net/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="http://www.tutysara.net/img/avatar-favicon.png" />
+  <meta name="twitter:image" content="http://www.tutysara.net/img/avatar-favicon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@tutysara" />
+  <meta name="twitter:creator" content="@tutysara" />
+  <meta property="og:url" content="http://www.tutysara.net/posts/2018/02/09/machine-learning-flashcards-from-twitter----part-1-data-collection-and-preprocessing/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TUTYSARA&#39;S SPACE" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="http://www.tutysara.net/posts/2018/02/09/machine-learning-flashcards-from-twitter----part-1-data-collection-and-preprocessing/" />
+  <link rel="alternate" href="http://www.tutysara.net/index.xml" type="application/rss+xml" title="TUTYSARA&#39;S SPACE">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://www.tutysara.net/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://www.tutysara.net/css/codeblock.css" />
+  <link rel="stylesheet" href="http://www.tutysara.net/css/highlight.min.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-34510369-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.tutysara.net/">TUTYSARA&#39;S SPACE</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+	
+	  <li>
+		<form class="navbar-form" role="search" action="http://www.google.com/search" method="get">
+			<div class="input-group">
+				<input class="form-control" type="search" placeholder="Search..." name="q" id="search">
+				<input value="http://www.tutysara.net" name="sitesearch" type="hidden">
+			</div>
+		</form>
+	</li>
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="TUTYSARA&#39;S SPACE" href="http://www.tutysara.net/">
+            <img class="avatar-img" src="http://www.tutysara.net/img/avatar-favicon.png" alt="TUTYSARA&#39;S SPACE" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+  <div id="modalSearch" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search TUTYSARA&#39;S SPACE</h4>
+        </div>
+        <div class="modal-body">
+          <gcse:search></gcse:search>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Machine Learning Flashcards from Twitter -- Part 1 Data Collection and Preprocessing</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on February 9, 2018
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 3 minutes (566 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>I was searching the net for mlflashcards, I found this incredible machine learning flashcard <a href="https://twitter.com/search?q=machinelearningflashcards.com%20and%20chrisalbon%20&amp;src=typd">tweet series</a> from <a href="https://twitter.com/chrisalbon">Chris Albon</a>.
+It looks pretty and covers a lot of ground, Got a thought &ndash; why not download them for later use?
+I thought it would be a fun exercise to start the weekend and jumped into action.</p>
+
+<h2 id="step-1-collect-scrape-data-from-twitter">Step 1 &ndash; Collect/Scrape data from twitter</h2>
+
+<p>I evaluated using twitter api using <a href="https://github.com/tweepy/tweepy">tweetpy</a>, but it has its own limitation aka we can search only a week worth of data which is not good for our use case.
+We shoud be able to get data spread across months since the tweets we are interested are spread across a wide time range.</p>
+
+<p>So, the next step is to try scraping. We got <a href="https://github.com/taspinar/twitterscraper">twitterscraper</a> to our rescue here.
+Scraping was an one step painless process with this tool.</p>
+
+<p>Install it using</p>
+
+<pre><code>pip install twitterscraper
+</code></pre>
+
+<p>Scrape the data matching a query using</p>
+
+<pre><code>twitterscraper &quot;machinelearningflashcards.com  from:chrisalbon&quot; -o mlflashcards_tweets_large.json
+</code></pre>
+
+<p>The data is scraped and stored in a json file. The next step is preprocessing.</p>
+
+<h2 id="step-2-preprcessing">Step 2 &ndash; Preprcessing</h2>
+
+<p>Here we want to preprocess the data to learn about it and to process further. We will convert the data from json and read it into a dataframe.</p>
+
+<h3 id="2-1-read-the-data">2.1 Read the data</h3>
+
+<pre><code>import codecs, json
+with codecs.open('mlflashcards_tweets_large.json', 'r', 'utf-8') as f:
+    tweets = json.load(f, encoding='utf-8')
+</code></pre>
+
+<p>Look at a sample data</p>
+
+<pre><code>t = tweets[5]
+t
+</code></pre>
+
+<p>output</p>
+
+<pre><code>{'fullname': 'Chris Albon',
+ 'id': '960977759915851776',
+ 'likes': '6',
+ 'replies': '2',
+ 'retweets': '1',
+ 'text': 'Alpha In Ridge Regression https://machinelearningflashcards.com\xa0pic.twitter.com/DFdSKO7DiH',
+ 'timestamp': '2018-02-06T20:45:26',
+ 'url': '/chrisalbon/status/960977759915851776',
+ 'user': 'chrisalbon'}
+</code></pre>
+
+<h3 id="2-2-write-and-test-few-utility-methods-to-extract-data">2.2 Write and test few utility methods to extract data</h3>
+
+<pre><code>## get full tweet url
+def get_tweet_url(tweet):
+    return 'https://twitter.com' + tweet['url']
+
+#test
+tweet_url = get_tweet_url(t)
+print(tweet_url)
+
+# output: https://twitter.com/chrisalbon/status/960977759915851776
+
+## get tweet text (text without url)
+def get_tweet_text(tweet):
+    text = tweet['text']
+    res = re.search('(.*) https.*', text)
+    if res:
+        text = res.group(1)
+    else:
+        text = None
+    return text
+
+#test
+get_tweet_text(t)
+# output: 'Alpha In Ridge Regression'
+</code></pre>
+
+<h3 id="2-3-convert-to-dataframe">2.3 Convert to dataframe</h3>
+
+<pre><code>rows = []
+for tweet in tweets[:]:
+    row = {&quot;id&quot;: tweet['id'],
+            &quot;likes&quot;: tweet['likes'],
+            &quot;replies&quot;: tweet['replies'],
+            &quot;retweets&quot;: tweet['retweets'],
+            &quot;timestamp&quot;: tweet['timestamp'],
+            &quot;url&quot;: get_tweet_url(tweet),
+            &quot;text&quot;: get_tweet_text(tweet)}
+rows.append(row)
+df = pd.DataFrame.from_dict(rows)
+df
+</code></pre>
+
+<p>looks something like this</p>
+
+<pre><code>    id  likes   replies     retweets    text    timestamp   url
+0   892802102702911488  1   0   1   None    2017-08-02T17:39:43     https://twitter.com/chrisalbon/status/89280210...
+1   961698946698567680  5   0   0   Threshold Activation    2018-02-08T20:31:11     https://twitter.com/chrisalbon/status/96169894...
+2   961666291189743616  23  0   5   Chi-Squared     2018-02-08T18:21:25     https://twitter.com/chrisalbon/status/96166629...
+</code></pre>
+
+<h3 id="2-4-extract-image-url-from-tweet-url">2.4 Extract image url from tweet url</h3>
+
+<pre><code>def get_img_url(tweet_url):
+    page_data = requests.get(tweet_url).text
+    res = re.search('data-image-url=&quot;(.*)&quot;', page_data)
+    if res:
+        img_url = res.group(1)
+    else:
+        img_url = None
+    return img_url
+
+#test
+get_img_url(tweet_url)
+# output: 'https://pbs.twimg.com/media/DViGZR3VoAAAoNf.png'
+
+df['img_url'] = [get_img_url(tweet_url)  for tweet_url in df.url]
+df.tail()
+</code></pre>
+
+<p>looks something like this</p>
+
+<pre><code>    id  likes   replies     retweets    text    timestamp   url     img_url
+236     946078250698018816  19  1   0   Bayes Error     2017-12-27T18:00:06     https://twitter.com/chrisalbon/status/94607825...   https://pbs.twimg.com/media/DSElJ54VQAEtuvF.png
+237     945751084974333952  47  3   13  Occams Razor    2017-12-26T20:20:04     https://twitter.com/chrisalbon/status/94575108...   https://pbs.twimg.com/media/DR_7mSwV4AAw6ZW.png
+238     945717937234591744  8   0   1   K-Fold Cross-Validation     2017-12-26T18:08:21     https://twitter.com/chrisalbon/status/94571793...   https://pbs.twimg.com/mediDR_dc5RVAAAMkcK.png
+</code></pre>
+
+<h2 id="step-3-write-to-csv">Step 3 &ndash; Write to csv</h2>
+
+<pre><code>Its time to save it to csv for further processing
+
+    df.to_csv(&quot;chrisalbon_mlflashcards.csv&quot;)
+</code></pre>
+
+<p>By this time I got other ideas to test. Instead of just downloading the images, I wanted to anaylze the tweets to know more about it using the data we have.</p>
+
+<p>The result is we are going to split this post into two parts where the next post will contain details on the analyis and code to download images. It will be published when the analysis is complete, let me go work on it. See you till then.</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://www.tutysara.net/posts/2018/02/07/deep-down-the-decision-tree/" data-toggle="tooltip" data-placement="top" title="Deep Down the Decision Tree">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://www.tutysara.net/posts/2018/02/11/machine-learning-flashcards-from-twitter----part-2-data-analysis-and-download/" data-toggle="tooltip" data-placement="top" title="Machine Learning Flashcards from Twitter -- Part 2 Data Analysis and Download">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tutysarablog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:tutysara%20at%20google%20mail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;tutysara" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/tutysara" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/tutysara" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="http://www.tutysara.net/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="tutysara.net">tutysara</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://www.tutysara.net/">TUTYSARA&#39;S SPACE</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          &nbsp;&bull;&nbsp;[<a href="true"></a>]
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://www.tutysara.net/js/main.js"></script>
+<script src="http://www.tutysara.net/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="http://www.tutysara.net/js/load-photoswipe.js"></script>
+
+
+<script>
+  (function() {
+    var cx = 'true';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+
+
+
+  </body>
+</html>
+

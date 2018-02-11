@@ -6,9 +6,9 @@
     <description>Recent content in Self Notes on TUTYSARA&#39;S SPACE</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
-    <managingEditor>tutysara att google mail.com (tutysara)</managingEditor>
-    <webMaster>tutysara att google mail.com (tutysara)</webMaster>
-    <copyright>(c) 2016 tutysara</copyright>
+    <managingEditor>tutysara at google mail.com (tutysara)</managingEditor>
+    <webMaster>tutysara at google mail.com (tutysara)</webMaster>
+    <copyright>(c) 2018 tutysara</copyright>
     <lastBuildDate>Fri, 24 Mar 2017 09:07:41 +0530</lastBuildDate>
     
 	<atom:link href="http://www.tutysara.net/tags/self-notes/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +18,7 @@
       <title>Spacemacs Ctrl-i fix </title>
       <link>http://www.tutysara.net/posts/2017/03/24/spacemacs-ctrl-i-fix/</link>
       <pubDate>Fri, 24 Mar 2017 09:07:41 +0530</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2017/03/24/spacemacs-ctrl-i-fix/</guid>
       <description>Spacemacs uses Ctlr+o to move backward to the last edited location and Ctrl+i to move foward after going back using Ctrl+o similar to Vim.
 I found that Ctrl+o works but Ctrl+i doesn&amp;rsquo;t moves forward through the edit locations. I had the same issue in OSX/emacs 25.1 and in ubuntu/emacs25.1.
@@ -31,7 +31,7 @@ We have the troubleshooting steps there
       <title>How to create custom profile ID in googleplus</title>
       <link>http://www.tutysara.net/posts/2016/09/29/how-to-create-custom-profile-id-in-googleplus/</link>
       <pubDate>Thu, 29 Sep 2016 04:30:51 +0530</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2016/09/29/how-to-create-custom-profile-id-in-googleplus/</guid>
       <description>I was writing my blog and added a link to google plus in the sidebar. I wanted to make a human readable/rememberable Id to use for my google plus page.
 I guess, planning to {use|add link} to google plus is a bad idea. I googled to find the steps to create a custom profile Id and landed in the documentation page &amp;ndash; Get a custom URL for your Google+ profile</description>
@@ -41,7 +41,7 @@ I guess, planning to {use|add link} to google plus is a bad idea. I googled to f
       <title>Automating hugo blog deployment to github pages using travis-ci</title>
       <link>http://www.tutysara.net/posts/2016/09/27/automating-hugo-blog-deployment-to-github-pages-using-travis-ci/</link>
       <pubDate>Tue, 27 Sep 2016 03:35:35 +0530</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2016/09/27/automating-hugo-blog-deployment-to-github-pages-using-travis-ci/</guid>
       <description>Here are the steps I took to build and deploy my blog automatically using hugo and travis-ci to github pages
 I assume a hugo blog is already created and exist
@@ -54,7 +54,7 @@ language: go sudo: required git: submodules: true install: - go get -v github.co
       <title>Good Font for Spacemacs</title>
       <link>http://www.tutysara.net/posts/2016/09/03/good-font-for-spacemacs/</link>
       <pubDate>Sat, 03 Sep 2016 14:25:00 +0000</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2016/09/03/good-font-for-spacemacs/</guid>
       <description>Spacemacs recommends using source code pro as the default font, infact this is the font set in .spacemacs file. If the font is not availale it is substituted for some other alternative. To find the font in use do C-u C-x = on my mac it was using Menlo font. DejavuSansMono looks better than Source code Pro on ubuntu and I switched to it in my ubuntu system. A list of top programming fonts can be found at Top programming fonts</description>
     </item>
@@ -63,7 +63,7 @@ language: go sudo: required git: submodules: true install: - go get -v github.co
       <title>Django development on OSX using emacs</title>
       <link>http://www.tutysara.net/posts/2013/10/30/django-development-on-osx-using-emacs/</link>
       <pubDate>Wed, 30 Oct 2013 13:16:00 +0000</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2013/10/30/django-development-on-osx-using-emacs/</guid>
       <description>I started following the Django tutorials by arun. I wanted to know about the related classes and quickly look into docs for the things that I code, I wanted an environment that is nice to newbies, helping with code completion and easy documentation lookup. I searched and found a huge list of options. Since I was begining with Django I wanted an environment that is much easier to setup, my first choice was pycharm, but unfortunately the community edition of pycharm doesn&amp;rsquo;t support Django - see this.</description>
     </item>
@@ -72,7 +72,7 @@ language: go sudo: required git: submodules: true install: - go get -v github.co
       <title>Running a Hacker news clone</title>
       <link>http://www.tutysara.net/posts/2013/10/21/running-a-hacker-news-clone/</link>
       <pubDate>Mon, 21 Oct 2013 15:25:00 +0000</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2013/10/21/running-a-hacker-news-clone/</guid>
       <description>I very much like the presentation of hackernews when it comes to understanding and making sense of the discussions quickly. It is a lot easier than reading pages of forums to get the main ideas of the discussions since the top comments and active discussions bubble to the top.
 I wanted to run a site for discussing and sharing information that are useful for people working in techparks and the format that immediately clicked in my mind was the hacknews style.</description>
@@ -82,7 +82,7 @@ I wanted to run a site for discussing and sharing information that are useful fo
       <title>Setting up a  new VPS server</title>
       <link>http://www.tutysara.net/posts/2013/10/18/setting-up-a--new-vps-server/</link>
       <pubDate>Fri, 18 Oct 2013 11:16:00 +0000</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2013/10/18/setting-up-a--new-vps-server/</guid>
       <description>These are the things I did to setup new VPS instances on Digital Ocean and ChicagoVPS
 Update the machine sudo apt-get update sudo apt-get upgrade  Set locales sudo locale-gen sudo dpkg-reconfigure locales  add user sudo adduser tutysra # give sudo previliges sudo visudo tutysra ALL=(ALL) ALL  Install Git sudo apt-get install git  Install sun java sudo add-apt-repository ppa:webupd8team/java sudo apt-get update sudo apt-get install oracle-java7-installer  Install Tor for screen scrapping sudo apt-get install tor sudo /etc/init.</description>

@@ -6,9 +6,9 @@
     <description>Recent content in Tech on TUTYSARA&#39;S SPACE</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
-    <managingEditor>tutysara att google mail.com (tutysara)</managingEditor>
-    <webMaster>tutysara att google mail.com (tutysara)</webMaster>
-    <copyright>(c) 2016 tutysara</copyright>
+    <managingEditor>tutysara at google mail.com (tutysara)</managingEditor>
+    <webMaster>tutysara at google mail.com (tutysara)</webMaster>
+    <copyright>(c) 2018 tutysara</copyright>
     <lastBuildDate>Mon, 21 Oct 2013 15:25:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.tutysara.net/tags/tech/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +18,7 @@
       <title>Running a Hacker news clone</title>
       <link>http://www.tutysara.net/posts/2013/10/21/running-a-hacker-news-clone/</link>
       <pubDate>Mon, 21 Oct 2013 15:25:00 +0000</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2013/10/21/running-a-hacker-news-clone/</guid>
       <description>I very much like the presentation of hackernews when it comes to understanding and making sense of the discussions quickly. It is a lot easier than reading pages of forums to get the main ideas of the discussions since the top comments and active discussions bubble to the top.
 I wanted to run a site for discussing and sharing information that are useful for people working in techparks and the format that immediately clicked in my mind was the hacknews style.</description>

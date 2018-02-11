@@ -6,19 +6,86 @@
     <description>Recent content on TUTYSARA&#39;S SPACE</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
-    <managingEditor>tutysara att google mail.com (tutysara)</managingEditor>
-    <webMaster>tutysara att google mail.com (tutysara)</webMaster>
-    <copyright>(c) 2016 tutysara</copyright>
-    <lastBuildDate>Sun, 26 Mar 2017 19:17:21 +0530</lastBuildDate>
+    <managingEditor>tutysara at google mail.com (tutysara)</managingEditor>
+    <webMaster>tutysara at google mail.com (tutysara)</webMaster>
+    <copyright>(c) 2018 tutysara</copyright>
+    <lastBuildDate>Sun, 11 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.tutysara.net/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Machine Learning Flashcards from Twitter -- Part 2 Data Analysis and Download</title>
+      <link>http://www.tutysara.net/posts/2018/02/11/machine-learning-flashcards-from-twitter----part-2-data-analysis-and-download/</link>
+      <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/02/11/machine-learning-flashcards-from-twitter----part-2-data-analysis-and-download/</guid>
+      <description>This is the analysis part where we do a small analysis to find
+ Which are the most important/popular tweets Whether older materials covered important concepts than recent tweets  Load the necessary libs %load_ext autoreload %autoreload 2 %matplotlib inline import pandas as pd pd.set_option(&amp;quot;display.width&amp;quot;, 150) import requests import re import matplotlib.pyplot as plt import matplotlib.image as mpimg from pathlib import Path  Load csv df = pd.read_csv(&amp;quot;chrisalbon_mlflashcards.csv&amp;quot;) df[&#39;text&#39;].fillna(&#39;&#39;, inplace=True)  df.</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning Flashcards from Twitter -- Part 1 Data Collection and Preprocessing</title>
+      <link>http://www.tutysara.net/posts/2018/02/09/machine-learning-flashcards-from-twitter----part-1-data-collection-and-preprocessing/</link>
+      <pubDate>Fri, 09 Feb 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/02/09/machine-learning-flashcards-from-twitter----part-1-data-collection-and-preprocessing/</guid>
+      <description>I was searching the net for mlflashcards, I found this incredible machine learning flashcard tweet series from Chris Albon. It looks pretty and covers a lot of ground, Got a thought &amp;ndash; why not download them for later use? I thought it would be a fun exercise to start the weekend and jumped into action.
+Step 1 &amp;ndash; Collect/Scrape data from twitter I evaluated using twitter api using tweetpy, but it has its own limitation aka we can search only a week worth of data which is not good for our use case.</description>
+    </item>
+    
+    <item>
+      <title>Deep Down the Decision Tree</title>
+      <link>http://www.tutysara.net/posts/2018/02/07/deep-down-the-decision-tree/</link>
+      <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/02/07/deep-down-the-decision-tree/</guid>
+      <description>Understanding How the split is made and the algorithms covered. I am taking the wonderful fast.ai (http://course.fast.ai/) course thought by Jermey Howard and Rachel. DecisionTrees (RandomForest) is covered in the second video (link)  Where they discuss on how the split is made</description>
+    </item>
+    
+    <item>
+      <title>Themes and Extensions for Jupyter notebook</title>
+      <link>http://www.tutysara.net/posts/2018/02/07/themes-and-extensions-for-jupyter-notebook/</link>
+      <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/02/07/themes-and-extensions-for-jupyter-notebook/</guid>
+      <description>I am taking the wonderful fast.ai (http://course.fast.ai/) course thought by Jermey Howard and Rachel. We use jupyter notebooks in classes and it is always nice to see how Jermey&amp;rsquo;s notebook looks.
+It has few tweaks like
+ collapsible headings better tables and fonts  Learnt that he uses a themes for the visual customizations and an extensions to allow collapsing of headers from his reply in forums (http://forums.fast.ai/t/collapsable-expandable-jupyter-cells/205/5)
+The theme script can be installed from this github repo (https://github.</description>
+    </item>
+    
+    <item>
+      <title>Useful Functions in Fastai library</title>
+      <link>http://www.tutysara.net/posts/2018/02/07/useful-functions-in-fastai-library/</link>
+      <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/02/07/useful-functions-in-fastai-library/</guid>
+      <description>Here are some useful functions from fastai library ordered by the lessons in which they are covered
+ Video 1
+ Notebook &amp;ndash; link
+ train_cat()
+ proc_df()
+  Video 2
+ draw_tree()    </description>
+    </item>
+    
+    <item>
+      <title>Use Skipgrams with sklearn CountVectorizer and TfidfVectorizer</title>
+      <link>http://www.tutysara.net/posts/2018/01/07/use-skipgrams-with-sklearn-countvectorizer-and-tfidfvectorizer/</link>
+      <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
+      <author>tutysara at google mail.com (tutysara)</author>
+      <guid>http://www.tutysara.net/posts/2018/01/07/use-skipgrams-with-sklearn-countvectorizer-and-tfidfvectorizer/</guid>
+      <description>We don&amp;rsquo;t have an implementation for skipgrams in sklearn. This post covers how to use the skipgram function in nltk with sklearn&amp;rsquo;s CountVectorizer and TfidfVectorizer
+We are going to create a skipgram tokenizer that can be passed to the tokenizer parameter of the vectorizer.
+Create a basic tokenizer that can split the original strings to tokesn. Tokenizer can be just .split() or a function to filter non-alpahbets etc. We can use tokenizer as below</description>
+    </item>
+    
+    <item>
       <title>Fix isset error in Hugo 2 version</title>
       <link>http://www.tutysara.net/posts/2017/03/26/fix-isset-error-in-hugo-2-version/</link>
       <pubDate>Sun, 26 Mar 2017 19:17:21 +0530</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2017/03/26/fix-isset-error-in-hugo-2-version/</guid>
       <description>I have setup automatic compiling and deploying of my blog using Travis.CI
 Recently I encountered a strange issue, the blog compiles and runs fine in my system but the site doesn&amp;rsquo;t come up after a Travis build.
@@ -30,7 +97,7 @@ Deploying updates to GitHub... Started building sites ... ERROR 2017/03/25 02:31
       <title>Spacemacs Ctrl-i fix </title>
       <link>http://www.tutysara.net/posts/2017/03/24/spacemacs-ctrl-i-fix/</link>
       <pubDate>Fri, 24 Mar 2017 09:07:41 +0530</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2017/03/24/spacemacs-ctrl-i-fix/</guid>
       <description>Spacemacs uses Ctlr+o to move backward to the last edited location and Ctrl+i to move foward after going back using Ctrl+o similar to Vim.
 I found that Ctrl+o works but Ctrl+i doesn&amp;rsquo;t moves forward through the edit locations. I had the same issue in OSX/emacs 25.1 and in ubuntu/emacs25.1.
@@ -43,7 +110,7 @@ We have the troubleshooting steps there
       <title>How to create custom profile ID in googleplus</title>
       <link>http://www.tutysara.net/posts/2016/09/29/how-to-create-custom-profile-id-in-googleplus/</link>
       <pubDate>Thu, 29 Sep 2016 04:30:51 +0530</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2016/09/29/how-to-create-custom-profile-id-in-googleplus/</guid>
       <description>I was writing my blog and added a link to google plus in the sidebar. I wanted to make a human readable/rememberable Id to use for my google plus page.
 I guess, planning to {use|add link} to google plus is a bad idea. I googled to find the steps to create a custom profile Id and landed in the documentation page &amp;ndash; Get a custom URL for your Google+ profile</description>
@@ -53,7 +120,7 @@ I guess, planning to {use|add link} to google plus is a bad idea. I googled to f
       <title>Automating hugo blog deployment to github pages using travis-ci</title>
       <link>http://www.tutysara.net/posts/2016/09/27/automating-hugo-blog-deployment-to-github-pages-using-travis-ci/</link>
       <pubDate>Tue, 27 Sep 2016 03:35:35 +0530</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2016/09/27/automating-hugo-blog-deployment-to-github-pages-using-travis-ci/</guid>
       <description>Here are the steps I took to build and deploy my blog automatically using hugo and travis-ci to github pages
 I assume a hugo blog is already created and exist
@@ -66,7 +133,7 @@ language: go sudo: required git: submodules: true install: - go get -v github.co
       <title>Good Font for Spacemacs</title>
       <link>http://www.tutysara.net/posts/2016/09/03/good-font-for-spacemacs/</link>
       <pubDate>Sat, 03 Sep 2016 14:25:00 +0000</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2016/09/03/good-font-for-spacemacs/</guid>
       <description>Spacemacs recommends using source code pro as the default font, infact this is the font set in .spacemacs file. If the font is not availale it is substituted for some other alternative. To find the font in use do C-u C-x = on my mac it was using Menlo font. DejavuSansMono looks better than Source code Pro on ubuntu and I switched to it in my ubuntu system. A list of top programming fonts can be found at Top programming fonts</description>
     </item>
@@ -75,7 +142,7 @@ language: go sudo: required git: submodules: true install: - go get -v github.co
       <title>Django development on OSX using emacs</title>
       <link>http://www.tutysara.net/posts/2013/10/30/django-development-on-osx-using-emacs/</link>
       <pubDate>Wed, 30 Oct 2013 13:16:00 +0000</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2013/10/30/django-development-on-osx-using-emacs/</guid>
       <description>I started following the Django tutorials by arun. I wanted to know about the related classes and quickly look into docs for the things that I code, I wanted an environment that is nice to newbies, helping with code completion and easy documentation lookup. I searched and found a huge list of options. Since I was begining with Django I wanted an environment that is much easier to setup, my first choice was pycharm, but unfortunately the community edition of pycharm doesn&amp;rsquo;t support Django - see this.</description>
     </item>
@@ -84,7 +151,7 @@ language: go sudo: required git: submodules: true install: - go get -v github.co
       <title>Running a Hacker news clone</title>
       <link>http://www.tutysara.net/posts/2013/10/21/running-a-hacker-news-clone/</link>
       <pubDate>Mon, 21 Oct 2013 15:25:00 +0000</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2013/10/21/running-a-hacker-news-clone/</guid>
       <description>I very much like the presentation of hackernews when it comes to understanding and making sense of the discussions quickly. It is a lot easier than reading pages of forums to get the main ideas of the discussions since the top comments and active discussions bubble to the top.
 I wanted to run a site for discussing and sharing information that are useful for people working in techparks and the format that immediately clicked in my mind was the hacknews style.</description>
@@ -94,7 +161,7 @@ I wanted to run a site for discussing and sharing information that are useful fo
       <title>Setting up a  new VPS server</title>
       <link>http://www.tutysara.net/posts/2013/10/18/setting-up-a--new-vps-server/</link>
       <pubDate>Fri, 18 Oct 2013 11:16:00 +0000</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2013/10/18/setting-up-a--new-vps-server/</guid>
       <description>These are the things I did to setup new VPS instances on Digital Ocean and ChicagoVPS
 Update the machine sudo apt-get update sudo apt-get upgrade  Set locales sudo locale-gen sudo dpkg-reconfigure locales  add user sudo adduser tutysra # give sudo previliges sudo visudo tutysra ALL=(ALL) ALL  Install Git sudo apt-get install git  Install sun java sudo add-apt-repository ppa:webupd8team/java sudo apt-get update sudo apt-get install oracle-java7-installer  Install Tor for screen scrapping sudo apt-get install tor sudo /etc/init.</description>
@@ -104,7 +171,7 @@ Update the machine sudo apt-get update sudo apt-get upgrade  Set locales sudo lo
       <title>Correlation between INR values of different currencies</title>
       <link>http://www.tutysara.net/posts/2012/10/05/correlation-between-inr-values-of-different-currencies/</link>
       <pubDate>Fri, 05 Oct 2012 11:16:00 +0000</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2012/10/05/correlation-between-inr-values-of-different-currencies/</guid>
       <description>Correlation between INR values of different currencies 2012-09-05 11:31  data clojure     This is an interesting take away example from the class which Anand is teaching at NIAS. Here we are trying to correlate between the INR values of various currencies like AUD, CNY (Chinese Yen), EUR, GBP (Great Britain Pound), JPY, SGD, USD and find the positive or negative correlations. The focus is on data collection and transformation.</description>
     </item>
@@ -113,7 +180,7 @@ Update the machine sudo apt-get update sudo apt-get upgrade  Set locales sudo lo
       <title>Started blogging from a new place</title>
       <link>http://www.tutysara.net/posts/2012/09/02/started-blogging-from-a-new-place/</link>
       <pubDate>Sun, 02 Sep 2012 16:14:00 +0000</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/posts/2012/09/02/started-blogging-from-a-new-place/</guid>
       <description>I have been thinking about having a professional looking blog/space for some time. I noticed many people I follow on github maintaining a neat blog, I see that many of them use jekyll/ octopress and use github pages for hosting. I like the concept of static blogging and wanted to give it a try. 
   I gone through the process and it looks neat and clean, create a github repo with your username and drop html pages into it and github takes care of serving them, damm simple.</description>
@@ -123,7 +190,7 @@ Update the machine sudo apt-get update sudo apt-get upgrade  Set locales sudo lo
       <title>About</title>
       <link>http://www.tutysara.net/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/about/</guid>
       <description>  I am Saravana, a programmer doing entreprise software by day and hacking on interesting stuff by night. I Love to try new things and experiment with various technologies/things that interests me. I usually find that my interest keeps changing and centered mostly around making things easy for me.   </description>
     </item>
@@ -132,7 +199,7 @@ Update the machine sudo apt-get update sudo apt-get upgrade  Set locales sudo lo
       <title>Contact</title>
       <link>http://www.tutysara.net/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>tutysara att google mail.com (tutysara)</author>
+      <author>tutysara at google mail.com (tutysara)</author>
       <guid>http://www.tutysara.net/contact/</guid>
       <description>tutysara -&amp;gt; at -&amp;gt; g mail. com</description>
     </item>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Machine Learning Flashcards from Twitter -- Part 2 Data Analysis and Download</title>
+  <meta property="og:title" content="Machine Learning Flashcards from Twitter -- Part 2 Data Analysis and Download" />
+  <meta name="twitter:title" content="Machine Learning Flashcards from Twitter -- Part 2 Data Analysis and …" />
+  <meta name="description" content="This is the analysis part where we do a small analysis to find
+ Which are the most important/popular tweets Whether older materials covered important concepts than recent tweets  Load the necessary libs %load_ext autoreload %autoreload 2 %matplotlib inline import pandas as pd pd.set_option(&quot;display.width&quot;, 150) import requests import re import matplotlib.pyplot as plt import matplotlib.image as mpimg from pathlib import Path  Load csv df = pd.read_csv(&quot;chrisalbon_mlflashcards.csv&quot;) df[&#39;text&#39;].fillna(&#39;&#39;, inplace=True)  df.">
+  <meta property="og:description" content="This is the analysis part where we do a small analysis to find
+ Which are the most important/popular tweets Whether older materials covered important concepts than recent tweets  Load the necessary libs %load_ext autoreload %autoreload 2 %matplotlib inline import pandas as pd pd.set_option(&quot;display.width&quot;, 150) import requests import re import matplotlib.pyplot as plt import matplotlib.image as mpimg from pathlib import Path  Load csv df = pd.read_csv(&quot;chrisalbon_mlflashcards.csv&quot;) df[&#39;text&#39;].fillna(&#39;&#39;, inplace=True)  df.">
+  <meta name="twitter:description" content="This is the analysis part where we do a small analysis to find
+ Which are the most important/popular tweets Whether older materials covered important concepts than recent tweets  Load the necessary …">
+  <meta name="author" content="tutysara"/>
+  <link href='http://www.tutysara.net/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="http://www.tutysara.net/img/avatar-favicon.png" />
+  <meta name="twitter:image" content="http://www.tutysara.net/img/avatar-favicon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@tutysara" />
+  <meta name="twitter:creator" content="@tutysara" />
+  <meta property="og:url" content="http://www.tutysara.net/posts/2018/02/11/machine-learning-flashcards-from-twitter----part-2-data-analysis-and-download/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TUTYSARA&#39;S SPACE" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="http://www.tutysara.net/posts/2018/02/11/machine-learning-flashcards-from-twitter----part-2-data-analysis-and-download/" />
+  <link rel="alternate" href="http://www.tutysara.net/index.xml" type="application/rss+xml" title="TUTYSARA&#39;S SPACE">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://www.tutysara.net/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://www.tutysara.net/css/codeblock.css" />
+  <link rel="stylesheet" href="http://www.tutysara.net/css/highlight.min.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-34510369-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.tutysara.net/">TUTYSARA&#39;S SPACE</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+	
+	  <li>
+		<form class="navbar-form" role="search" action="http://www.google.com/search" method="get">
+			<div class="input-group">
+				<input class="form-control" type="search" placeholder="Search..." name="q" id="search">
+				<input value="http://www.tutysara.net" name="sitesearch" type="hidden">
+			</div>
+		</form>
+	</li>
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="TUTYSARA&#39;S SPACE" href="http://www.tutysara.net/">
+            <img class="avatar-img" src="http://www.tutysara.net/img/avatar-favicon.png" alt="TUTYSARA&#39;S SPACE" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+  <div id="modalSearch" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search TUTYSARA&#39;S SPACE</h4>
+        </div>
+        <div class="modal-body">
+          <gcse:search></gcse:search>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Machine Learning Flashcards from Twitter -- Part 2 Data Analysis and Download</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on February 11, 2018
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 6 minutes (1200 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>This is the analysis part where we do a small analysis to find</p>
+
+<ul>
+<li>Which are the most important/popular tweets</li>
+<li>Whether older materials covered important concepts than recent tweets</li>
+</ul>
+
+<h3 id="load-the-necessary-libs">Load the necessary libs</h3>
+
+<pre><code class="language-python">%load_ext autoreload
+%autoreload 2
+%matplotlib inline
+
+
+import pandas as pd
+pd.set_option(&quot;display.width&quot;, 150)
+import requests
+import re
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+from pathlib import Path 
+</code></pre>
+
+<h3 id="load-csv">Load csv</h3>
+
+<pre><code class="language-python">df = pd.read_csv(&quot;chrisalbon_mlflashcards.csv&quot;)
+df['text'].fillna('', inplace=True)
+</code></pre>
+
+<pre><code class="language-python">df.tail()
+</code></pre>
+
+<pre><code> id  likes  replies  retweets            text       timestamp             url         img_url
+236  94607825069...     19        1         0     Bayes Error  2017-12-27T...  https://twi...  https://pbs...
+237  94575108497...     47        3        13    Occams Razor  2017-12-26T...  https://twi...  https://pbs...
+238  94571793723...      8        0         1  K-Fold Cros...  2017-12-26T...  https://twi...  https://pbs...
+239  94538342129...     18        1         1         Extrema  2017-12-25T...  https://twi...  https://pbs...
+240  94536381783...     34        1         7  Softmax Act...  2017-12-25T...  https://twi...  https://pbs...
+
+</code></pre>
+
+<h3 id="check-for-missing-values">Check for missing values</h3>
+
+<pre><code class="language-python">df.count(axis=0)
+</code></pre>
+
+<pre><code>id           241
+likes        241
+replies      241
+retweets     241
+text         241
+timestamp    241
+url          241
+img_url      237
+dtype: int64
+</code></pre>
+
+<p>We see we have few img_urls missing. Let&rsquo;s check what they are</p>
+
+<pre><code class="language-python">df[df.img_url.isnull()]
+</code></pre>
+
+<pre><code>  id  likes  replies  retweets text            timestamp                       url img_url
+83   930450506744414208     52        3         0       2017-11-14T15:01:02  https://twitter.com/c...     NaN
+193  902952380160892928      1        0         0       2017-08-30T17:53:18  https://twitter.com/c...     NaN
+198  901323838675337216      0        1         0       2017-08-26T06:02:03  https://twitter.com/c...     NaN
+226  948412638148444160      3        0         0       2018-01-03T04:36:08  https://twitter.com/c...     NaN
+</code></pre>
+
+<p>These are false poisitives from our search.
+They contain the search term but doesn&rsquo;t contain an image and can be neglected</p>
+
+<h3 id="drop-invalid-rows">Drop invalid rows</h3>
+
+<pre><code class="language-python">df = df.dropna(subset=['img_url'])
+</code></pre>
+
+<pre><code class="language-python">df.count(axis=0)
+</code></pre>
+
+<h3 id="check-again-after-droping-invalid-rows">Check again after droping invalid rows</h3>
+
+<pre><code>id           237
+likes        237
+replies      237
+retweets     237
+text         237
+timestamp    237
+url          237
+img_url      237
+dtype: int64
+</code></pre>
+
+<h3 id="check-datatypes">Check datatypes</h3>
+
+<p>Let&rsquo;s check the datatype to see if they are what we want.
+Especially we have to have <code>timestamp</code> as <code>datetime</code> column. Let&rsquo;s check and convert the datatype if it is not.</p>
+
+<h4 id="check">Check</h4>
+
+<pre><code class="language-python">df.dtypes
+</code></pre>
+
+<pre><code>id            int64
+likes         int64
+replies       int64
+retweets      int64
+text         object
+timestamp    object
+url          object
+img_url      object
+dtype: object
+</code></pre>
+
+<h4 id="convert">Convert</h4>
+
+<pre><code class="language-python">df.timestamp = pd.to_datetime(df.timestamp, infer_datetime_format=True)
+df.dtypes
+</code></pre>
+
+<pre><code>id                    int64
+likes                 int64
+replies               int64
+retweets              int64
+text                 object
+timestamp    datetime64[ns]
+url                  object
+img_url              object
+dtype: object
+</code></pre>
+
+<h3 id="utility-function-to-get-image-name">Utility Function to get image name</h3>
+
+<p>This is an utility method to construct a meaningful filename.
+It tries to use the <code>text</code> and the <code>id</code> column for name and picks up the extension (png/jpg) from the img_url</p>
+
+<pre><code class="language-python">def get_image_name(id, text, img_url):
+    res = str(id)
+    if text:
+        res = res + &quot;_&quot; + text.replace(&quot; &quot;, &quot;_&quot;)
+    try:
+        extn = Path(img_url).suffix
+    except:
+        print(id, text, img_url)
+    res = res + extn
+    return res
+
+# test
+index = 232
+img_url = df.iloc[index].img_url
+id = df.iloc[index].id
+text = df.iloc[index].text
+img_name = get_image_name(id, text, img_url)
+print(img_name)
+
+#  946078250698018816_Bayes_Error.png
+</code></pre>
+
+<h3 id="get-the-image-names-and-add-it-as-a-new-column">Get the image names and add it as a new column</h3>
+
+<pre><code class="language-python">img_names = []
+for index, row in df.iterrows():
+    img_name = get_image_name(row.id, row.text, row.img_url)
+    img_names.append(img_name)
+df['img_name'] = img_names
+</code></pre>
+
+<pre><code class="language-python">df.tail()
+</code></pre>
+
+<pre><code> id                         text                                      img_name
+236  946078250698018816                  Bayes Error            946078250698018816_Bayes_Error.png
+237  945751084974333952                 Occams Razor           945751084974333952_Occams_Razor.png
+238  945717937234591744      K-Fold Cross-Validation  945717937234591744_K-Fold_Cross-Validatio...
+239  945383421299191808                      Extrema                945383421299191808_Extrema.png
+240  945363817839566849  Softmax Activation Function  945363817839566849_Softmax_Activation_Fun...
+</code></pre>
+
+<h3 id="utility-function-to-download-an-image">Utility function to download an image</h3>
+
+<pre><code class="language-python">def download_image(img_url, img_name):
+    img_data = requests.get(img_url).content
+    with open(img_name, 'wb') as handler:
+        handler.write(img_data)
+    return img_name
+
+# test
+downloaded_img = download_image(img_url, img_name)
+print(downloaded_img)
+
+#  945363817839566849_Softmax_Activation_Function.png
+</code></pre>
+
+<h3 id="download-all-images">Download all images</h3>
+
+<p>Here is the main part of code which downloads all the image from the urls in the dataframe.
+It is saved in the current working directory with name from <code>img_name</code> col
+If we want to change the place where it is saved use <code>%cd &lt;targer_dir&gt;</code> to change the file location</p>
+
+<pre><code class="language-python">n = len(df)
+for index, row in df.iterrows():
+    try:
+        img_name = row.img_name
+        img_url = row.img_url
+        print(f&quot;processing img {index + 1}/{n}&quot;, img_name, img_url)
+        download_image(img_url, img_name)      
+    except Exception as inst:
+        print(&quot;Error&quot;, index, inst, img_name, img_url)
+</code></pre>
+
+<h3 id="check-date-range-of-tweets">Check date range of tweets</h3>
+
+<p>Lets check from what time to what time Chris had created them</p>
+
+<pre><code class="language-python">min_date = df.timestamp.min()
+max_date = df.timestamp.max()
+print(min_date, max_date)
+# 2017-08-02 17:39:43 2018-02-08 20:31:11
+</code></pre>
+
+<p>Not a huge range in time, we may not have much effect of time with the content of the material</p>
+
+<h3 id="find-top-5-liked-and-retweeted-tweets">Find top 5 liked and retweeted tweets</h3>
+
+<pre><code class="language-python"># top 5 liked and retweeted tweets
+df_top5 = df.sort_values(by=['likes', 'retweets'], ascending=[False, False])[:5]
+df_top5
+</code></pre>
+
+<pre><code>likes  replies  retweets           timestamp                                          text
+207   1815       74       700 2017-08-22 13:06:13                                              
+21      99        4        43 2017-10-26 19:25:53                              Simpsons Paradox
+148     73        8        13 2017-12-22 18:21:54                                       Tensors
+67      65        4        18 2017-11-23 20:51:11                                         Big O
+217     65        2         6 2018-01-09 18:32:45  Normalized Initialization Of Neural Netwo...
+</code></pre>
+
+<h4 id="utility-function-to-plot-an-image-and-images">Utility function to plot an image and images</h4>
+
+<pre><code class="language-python">def plot_img(img_name, size=(5, 3)):
+    plt.figure(figsize=size)
+    img = mpimg.imread(img_name)
+    plt.imshow(img) 
+    
+# test
+plot_img(img_name)
+</code></pre>
+
+<p><img src="/img/mlflashcards_part2/output_18_0.png" alt="png" /></p>
+
+<pre><code class="language-python">def plot_images(img_names, titles, size=(20, 10), columns=5):
+    plt.figure(figsize=size)
+    #print(img_names)
+    for i, img_name in enumerate(img_names):
+        image = mpimg.imread(img_name)
+        plt.subplot(len(img_names) / columns + 1, columns, i + 1)
+        plt.title(titles[i][:25])
+        plt.xticks([])
+        plt.yticks([])
+        plt.imshow(image)
+</code></pre>
+
+<pre><code class="language-python">cols = ['likes', 'replies', 'retweets', 'timestamp', 'text']
+print(df_top5[cols])
+plot_images(df_top5.img_name.values, df_top5.text.values)
+</code></pre>
+
+<pre><code>likes  replies  retweets           timestamp                                          text
+207   1815       74       700 2017-08-22 13:06:13                                              
+21      99        4        43 2017-10-26 19:25:53                              Simpsons Paradox
+148     73        8        13 2017-12-22 18:21:54                                       Tensors
+67      65        4        18 2017-11-23 20:51:11                                         Big O
+217     65        2         6 2018-01-09 18:32:45  Normalized Initialization Of Neural Netwo...    
+</code></pre>
+
+<p><img src="/img/mlflashcards_part2/output_20_1.png" alt="png" /></p>
+
+<h3 id="find-top-5-oldest-tweets">Find top 5 oldest tweets</h3>
+
+<pre><code class="language-python"># top 5 oldest tweets
+# wanted to check if more interesting topics are covering in the begining to start with
+df_top5 = df.sort_values(by=['timestamp'], ascending=[True])[:5]
+print(df_top5[cols])
+plot_images(df_top5.img_name.values, df_top5.text.values)
+</code></pre>
+
+<pre><code>        likes  replies  retweets           timestamp text
+0        1        0         1 2017-08-02 17:39:43     
+208     17        0         2 2017-08-21 20:13:16     
+206     19        0         7 2017-08-22 17:33:19     
+205     18        0         7 2017-08-22 19:34:29     
+204     24        1         9 2017-08-23 17:41:59    
+</code></pre>
+
+<p><img src="/img/mlflashcards_part2/output_21_1.png" alt="png" /></p>
+
+<h3 id="find-most-important-tweets">Find most important tweets</h3>
+
+<p>Here the idea is that the tweets that are most liked, retweeted are considered more important.
+Before that we have to find if there is a difference between liked and retweeted tweets.
+Even before doing that analysis lets remove the super outlier.</p>
+
+<pre><code class="language-python"># drop outlier
+df.drop(207, inplace=True)
+</code></pre>
+
+<pre><code class="language-python"># check if oldest tweets are best
+title = &quot;Likes/Retweets vs Time&quot;
+df.plot(x='timestamp', y=['likes', 'retweets'],  kind='line', ylim=(0,120), figsize=(10,10), title=title, subplots=False)
+</code></pre>
+
+<p><img src="/img/mlflashcards_part2/output_23_2.png" alt="png" /></p>
+
+<p>We can see recent tweets are gaining more attetion and being liked and shared more</p>
+
+<pre><code class="language-python"># find above average tweets
+likes_avg = df.likes.mean()
+print(likes_avg)
+df_above_average_liked = df[df.likes &gt; likes_avg]
+
+#17.199152542372882
+</code></pre>
+
+<pre><code class="language-python">df_above_average_liked.shape[0]
+# 81
+</code></pre>
+
+<p>this is a big number, we have many above average tweets, lets find something managable <code>(&lt; 50)</code></p>
+
+<h4 id="plot-how-the-tweets-are-distributed">Plot how the tweets are distributed</h4>
+
+<pre><code class="language-python">df.boxplot(column=&quot;likes&quot;, figsize=(10,10))
+</code></pre>
+
+<p><img src="/img/mlflashcards_part2/output_27_1.png" alt="png" /></p>
+
+<p>We see there are many outliers
+Lets pick the top 20% of tweet and check them</p>
+
+<pre><code class="language-python">likes_80 = df.likes.quantile(0.80)
+</code></pre>
+
+<pre><code class="language-python">df_likes_80 = df[df.likes &gt; likes_80]
+print(df_likes_80.shape[0])
+df_likes_80 = df_likes_80.sort_values(by=['likes'], ascending=[False])
+df_likes_80
+# 43
+</code></pre>
+
+<p>Ok, this looks like a manageble number for most important tweets to start looking from</p>
+
+<pre><code class="language-python"># most important (liked) tweet
+plot_images(df_likes_80.img_name.values, df_likes_80.text.values,  size=(15, 20))
+</code></pre>
+
+<p>These are the most liked/retweeted tweets, these are either well done and something which people liked or it covers important material</p>
+
+<p><img src="/img/mlflashcards_part2/output_31_0.png" alt="png" /></p>
+
+<p>This is a fun activity and we learned a few thing along the way. We also got a low res version of flashcards which are shared publicly on twitter.</p>
+
+<p>If you are looking for flashcards in many formats (web-quality png, PDF, Anki, and SVG) with a better resolution, they are availabele from Chris&rsquo;s site <a href="https://machinelearningflashcards.com/">https://machinelearningflashcards.com/</a> for purchase.</p>
+
+<p>If you cannot afford to it, request him on twitter <a href="https://twitter.com/chrisalbon">@chrisalbon</a>. Chirs seems like a generous guy, he may send one for free.
+Have fun, thanks for reading.</p>
+
+<p>Will be back with another topic that interets us, till then, see you guys.
+If you have any comments, suggestions or ideas please feel free to share.</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://www.tutysara.net/posts/2018/02/09/machine-learning-flashcards-from-twitter----part-1-data-collection-and-preprocessing/" data-toggle="tooltip" data-placement="top" title="Machine Learning Flashcards from Twitter -- Part 1 Data Collection and Preprocessing">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tutysarablog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:tutysara%20at%20google%20mail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;tutysara" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/tutysara" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/tutysara" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="http://www.tutysara.net/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="tutysara.net">tutysara</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://www.tutysara.net/">TUTYSARA&#39;S SPACE</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          &nbsp;&bull;&nbsp;[<a href="true"></a>]
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://www.tutysara.net/js/main.js"></script>
+<script src="http://www.tutysara.net/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="http://www.tutysara.net/js/load-photoswipe.js"></script>
+
+
+<script>
+  (function() {
+    var cx = 'true';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+
+
+
+  </body>
+</html>
+
