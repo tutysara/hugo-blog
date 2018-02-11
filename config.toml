@@ -30,13 +30,14 @@ disqusShortname = "tutysarablog"
 #pygments
 pygmentsUseClassic=true
 
+# hugo gen chromastyles --style=manni > syntax.css
 [permalinks]
     post = "posts/:year/:month/:day/:slug/"
     code = "/:slug/"
 
 [Params]
     subtitle = "what I learned that is worth sharing and useful for me/world or both"
-    logo = "/img/avatar-icon.png"
+    logo = "/img/avatar-favicon.png"
     favicon = "img/favicon.ico"
     dateFormat = "January 2, 2006"
     commit = true
