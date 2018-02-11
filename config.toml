@@ -5,7 +5,7 @@ baseurl = "http://www.tutysara.net/"
 title = "TUTYSARA'S SPACE"
 
 # Copyright
-copyright = "(c) 2016 tutysara"
+copyright = "(c) 2018 tutysara"
 
 # Language
 languageCode = "en-EN"
@@ -27,13 +27,16 @@ paginatePath = "page"
 # Enable Disqus integration
 disqusShortname = "tutysarablog"
 
+#pygments
+pygmentsUseClassic=true
+
 [permalinks]
     post = "posts/:year/:month/:day/:slug/"
     code = "/:slug/"
 
 [Params]
     subtitle = "what I learned that is worth sharing and useful for me/world or both"
-    logo = "img/avatar-icon.png"
+    logo = "/img/avatar-icon.png"
     favicon = "img/favicon.ico"
     dateFormat = "January 2, 2006"
     commit = true
@@ -46,7 +49,7 @@ disqusShortname = "tutysarablog"
     name = "tutysara"
     website = "tutysara.net"
     email = "tutysara at google mail.com"
-    googleplus = "+tutysara" # or xxxxxxxxxxxxxxxxxxxxx
+    googleplus = "+tutysara"
     github = "tutysara"
     twitter = "tutysara"
   
@@ -60,38 +63,5 @@ disqusShortname = "tutysarablog"
     name = "Tags"
     url = "tags"
     weight = 3
-
-#
-# All parameters below here are optional and can be mixed and matched.
-#
-[params]
-    # You can use markdown here.
-    brand = "tutysara"
-    topline = "what I learned that is worth sharing and useful for me/world or both"
-    footline = "coded with <i class='fa fa-heart'></i> using <a href='http://gohugo.io/hugo'>hugo</a> and heavily customized hugo-bootstrap theme"
-
-    # Show a sidebar menu
-    showRightSidebar = true
-
-    # Text for the top menu link, which goes the root URL for the site.
-    # Default (if omitted) is "Home".
-    home = "home"
-
-    # Select a syntax highight.
-    # Check the static/css/highlight directory for options.
-    highlight = "github"
-
-    # Google Analytics.
-    googleAnalytics = "UA-34510369-1"
-
-    # Sidebar social links.
-    github = "tutysara" # Your Github profile ID
-    # bitbucket = "test" # Your Bitbucket profile ID
-    # linkedin = "" # Your LinkedIn profile ID (from public URL)
-    googleplus = "+SaravananBaskaran7" # Your Google+ profile ID
-    # facebook = "" # Your Facebook profile ID
-    twitter = "tutysara" # Your Twitter profile ID
-    # youtube = ""  # Your Youtube channel ID
-    # flattr = ""  # populate with your flattr uid
 
 
