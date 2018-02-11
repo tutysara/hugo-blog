@@ -8,7 +8,8 @@ keywords:
 tags:
 - machine learning
 - python
-title: Machine Learning Flashcards from Twitter -- Part1 Data Collection and Preprocessing
+- twitter
+title: Machine Learning Flashcards from Twitter -- Part 1 Data Collection and Preprocessing
 topics:
 - ML
 type: post
