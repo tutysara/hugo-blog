@@ -166,7 +166,7 @@ df.dtypes
 
 
 ### Utility Function to get image name
-This is an utility method to construct a meaningful filename.
+This is an utility method to construct a meaningful filename.  
 It tries to use the `text` and the `id` column for name and picks up the extension (png/jpg) from the img_url
 
 ```python
