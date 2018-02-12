@@ -434,7 +434,7 @@ If you are looking for flashcards in many formats (web-quality png, PDF, Anki, a
 
 I ordered one myself from his site to show my support for his work.
 
-If you cannot afford to it, request him on twitter [@chrisalbon](https://twitter.com/chrisalbon). Chirs seems like a generous guy, he may arrange something for you.
+If you cannot afford to it, request him on twitter [@chrisalbon](https://twitter.com/chrisalbon). Chirs seems like a generous guy, he may make some arrangements for you.
 Have fun, thanks for reading.
 
 Will be back with another topic that interets us, till then, see you guys.
