@@ -25,14 +25,14 @@ paginate = 3
 paginatePath = "page"
 
 # Enable Disqus integration
-disqusShortname = "tutysarablog"
+#disqusShortname = "tutysarablog"
 
 #chroma
 pygmentsCodeFences = true
 pygmentsUseClasses = true
+pygmentsStyle = "trac"
 
 # pygments
-#pygmentsStyle = "trac"
 #pygmentsUseClassic = true
 
 # hugo gen chromastyles --style=manni > syntax.css
@@ -50,7 +50,7 @@ pygmentsUseClasses = true
     comments = true
     readingTime = true
     gcse = true
-    #useHLJS = true
+
 [Author]
     name = "tutysara"
     website = "tutysara.net"
@@ -70,4 +70,7 @@ pygmentsUseClasses = true
     url = "tags"
     weight = 3
 
-
+#https://api.staticman.net/v2/connect/tutysara/tutysara.net.comments
+[Params.staticman]
+    api = "https://api.staticman.net/v2/entry/tutysara/tutysara.net.comments/master/comments"
+    pulls =  "https://github.com/tutysara/tutysara.net.comments/pulls"
