@@ -432,11 +432,13 @@ This is a fun activity and we learned a few thing along the way. We also got a l
 
 If you are looking for flashcards in many formats (web-quality png, PDF, Anki, and SVG) with a better resolution, they are availabele from Chris's site [https://machinelearningflashcards.com/](https://machinelearningflashcards.com/) for purchase.
 
-If you cannot afford to it, request him on twitter [@chrisalbon](https://twitter.com/chrisalbon). Chirs seems like a generous guy, he may send one for free.
+I ordered one myself from his site to show my support for his work.
+
+If you cannot afford to it, request him on twitter [@chrisalbon](https://twitter.com/chrisalbon). Chirs seems like a generous guy, he may arrange something for you.
 Have fun, thanks for reading.
 
 Will be back with another topic that interets us, till then, see you guys.
 If you have any comments, suggestions or ideas please feel free to share.
 
-
+***PS: Found [Jasmine Dumas](https://twitter.com/jasdumas) who did a similar exercise in R. You can find her R script to download mlflashcards at her [blog](https://jasdumas.github.io/2017-05-02-twitter-ml-flashcards/)
 
