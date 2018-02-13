@@ -11,6 +11,9 @@ git config --global user.name "tutysara"
 # get theme
 rm -rf themes/*
 git clone https://github.com/halogenica/beautifulhugo.git themes/theme-beautifulhugo
+git clone https://github.com/tutysara/tutysara.net.comments comments
+rm -rf data
+ln -s comments/data data
 # Build the project.
 hugo -t theme-beautifulhugo # if using a theme, replace by `hugo -t <yourtheme>`
 
