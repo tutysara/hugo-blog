@@ -442,3 +442,5 @@ If you have any comments, suggestions or ideas please feel free to share.
 
 ***PS: Found [Jasmine Dumas](https://twitter.com/jasdumas) who did a similar exercise in R. You can find her R script to download mlflashcards at her [blog](https://jasdumas.github.io/2017-05-02-twitter-ml-flashcards/)
 
+***Update 02/21 -- source code for this reop can be found [here](https://github.com/tutysara/chrisablon-mlflashcards)
+

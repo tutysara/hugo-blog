@@ -147,6 +147,8 @@ By this time I got other ideas to test. Instead of just downloading the images, 
 
 The result is we are going to split this post into two parts where the next post will contain details on the analyis and code to download images. It will be published when the analysis is complete, let me go work on it. See you till then.
 
+***Update 02/21 -- source code for this reop can be found [here](https://github.com/tutysara/chrisablon-mlflashcards)
+
 
 
 
