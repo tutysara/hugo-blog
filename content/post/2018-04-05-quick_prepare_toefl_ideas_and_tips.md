@@ -34,7 +34,7 @@ There are many review videos which discusses sample questions which gives a tast
 
 Link [notefull](https://www.notefull.com/)
 
-## linguamarina's channel for tips on speaking and to compliment the Notefull videos on test sctructure and time management
+## linguamarina's channel for tips on speaking and to compliment the Notefull videos on test structure and time management
 Next is linguamarina's [channel](https://www.youtube.com/channel/UCAQg09FkoobmLquNNoO4ulg), she gives many practical advice and tips.
 Sometimes her instructor Jonathan joins her and walks through TOEFL sections and questions  
 I learned a very important tip of writing down the speaking section template from her videos and also tips for writing sections
