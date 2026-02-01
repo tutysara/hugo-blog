@@ -1,28 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Twitter on TUTYSARA&#39;S SPACE</title>
-    <link>http://www.tutysara.net/tags/twitter/</link>
+    <link>http://localhost:1313/tags/twitter/</link>
     <description>Recent content in Twitter on TUTYSARA&#39;S SPACE</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-EN</language>
-    <managingEditor>tutysara at google mail.com (tutysara)</managingEditor>
-    <webMaster>tutysara at google mail.com (tutysara)</webMaster>
     <copyright>(c) 2018 tutysara</copyright>
     <lastBuildDate>Fri, 09 Feb 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.tutysara.net/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="http://localhost:1313/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Machine Learning Flashcards from Twitter -- Part 1 Data Collection and Preprocessing</title>
-      <link>http://www.tutysara.net/posts/2018/02/09/machine-learning-flashcards-from-twitter----part-1-data-collection-and-preprocessing/</link>
+      <link>http://localhost:1313/posts/2018/02/09/machine-learning-flashcards-from-twitter--part-1-data-collection-and-preprocessing/</link>
       <pubDate>Fri, 09 Feb 2018 00:00:00 +0000</pubDate>
-      <author>tutysara at google mail.com (tutysara)</author>
-      <guid>http://www.tutysara.net/posts/2018/02/09/machine-learning-flashcards-from-twitter----part-1-data-collection-and-preprocessing/</guid>
-      <description>I was searching the net for mlflashcards, I found this incredible machine learning flashcard tweet series from Chris Albon. It looks pretty and covers a lot of ground, Got a thought &amp;ndash; why not download them for later use? I thought it would be a fun exercise to start the weekend and jumped into action.
-Step 1 &amp;ndash; Collect/Scrape data from twitter I evaluated using twitter api using tweetpy, but it has its own limitation aka we can search only a week worth of data which is not good for our use case.</description>
+      <guid>http://localhost:1313/posts/2018/02/09/machine-learning-flashcards-from-twitter--part-1-data-collection-and-preprocessing/</guid>
+      <description>&lt;p&gt;I was searching the net for mlflashcards, I found this incredible machine learning flashcard &lt;a href=&#34;https://twitter.com/search?q=machinelearningflashcards.com%20and%20chrisalbon%20&amp;amp;src=typd&#34;&gt;tweet series&lt;/a&gt; from &lt;a href=&#34;https://twitter.com/chrisalbon&#34;&gt;Chris Albon&lt;/a&gt;.&#xA;It looks pretty and covers a lot of ground, Got a thought &amp;ndash; why not download them for later use?&#xA;I thought it would be a fun exercise to start the weekend and jumped into action.&lt;/p&gt;&#xA;&lt;h2 id=&#34;step-1--collectscrape-data-from-twitter&#34;&gt;Step 1 &amp;ndash; Collect/Scrape data from twitter&lt;/h2&gt;&#xA;&lt;p&gt;I evaluated using twitter api using &lt;a href=&#34;https://github.com/tweepy/tweepy&#34;&gt;tweetpy&lt;/a&gt;, but it has its own limitation aka we can search only a week worth of data which is not good for our use case.&#xA;We shoud be able to get data spread across months since the tweets we are interested are spread across a wide time range.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

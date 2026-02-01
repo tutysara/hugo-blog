@@ -1,31 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spacemacs on TUTYSARA&#39;S SPACE</title>
-    <link>http://www.tutysara.net/tags/spacemacs/</link>
+    <link>http://localhost:1313/tags/spacemacs/</link>
     <description>Recent content in Spacemacs on TUTYSARA&#39;S SPACE</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-EN</language>
-    <managingEditor>tutysara at google mail.com (tutysara)</managingEditor>
-    <webMaster>tutysara at google mail.com (tutysara)</webMaster>
     <copyright>(c) 2018 tutysara</copyright>
     <lastBuildDate>Fri, 24 Mar 2017 09:07:41 +0530</lastBuildDate>
-    
-	<atom:link href="http://www.tutysara.net/tags/spacemacs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="http://localhost:1313/tags/spacemacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spacemacs Ctrl-i fix </title>
-      <link>http://www.tutysara.net/posts/2017/03/24/spacemacs-ctrl-i-fix/</link>
+      <link>http://localhost:1313/posts/2017/03/24/spacemacs-ctrl-i-fix/</link>
       <pubDate>Fri, 24 Mar 2017 09:07:41 +0530</pubDate>
-      <author>tutysara at google mail.com (tutysara)</author>
-      <guid>http://www.tutysara.net/posts/2017/03/24/spacemacs-ctrl-i-fix/</guid>
-      <description>Spacemacs uses Ctlr+o to move backward to the last edited location and Ctrl+i to move foward after going back using Ctrl+o similar to Vim.
-I found that Ctrl+o works but Ctrl+i doesn&amp;rsquo;t moves forward through the edit locations. I had the same issue in OSX/emacs 25.1 and in ubuntu/emacs25.1.
-Searched the net and found this helpful issue page &amp;ndash; https://github.com/syl20bnr/spacemacs/issues/5050
-We have the troubleshooting steps there
-(lookup-key evil-motion-state-map [C-i]) ;; should be evil-jump-forward (display-graphic-p) ;; should be t dotspacemacs-distinguish-gui-tab ;; should be t (lookup-key key-translation-map [?</description>
+      <guid>http://localhost:1313/posts/2017/03/24/spacemacs-ctrl-i-fix/</guid>
+      <description>&lt;p&gt;Spacemacs uses Ctlr+o to move backward to the last edited location and Ctrl+i to move foward after going back using Ctrl+o similar to Vim.&lt;/p&gt;&#xA;&lt;p&gt;I found that Ctrl+o works but Ctrl+i doesn&amp;rsquo;t moves forward through the edit locations. I had the same issue in OSX/emacs 25.1 and in ubuntu/emacs25.1.&lt;/p&gt;&#xA;&lt;p&gt;Searched the net and found this helpful issue page &amp;ndash; &lt;a href=&#34;https://github.com/syl20bnr/spacemacs/issues/5050&#34;&gt;https://github.com/syl20bnr/spacemacs/issues/5050&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;We have the troubleshooting steps there&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;(lookup-key evil-motion-state-map [C-i]) ;; should be evil-jump-forward&#xA;(display-graphic-p) ;; should be t&#xA;dotspacemacs-distinguish-gui-tab ;; should be t&#xA;(lookup-key key-translation-map [?\C-i]) ;; should be spacemacs/translate-C-i&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;In my system dotspacemacs/user-configcemacs-distinguish-gui-tab is set as nil.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

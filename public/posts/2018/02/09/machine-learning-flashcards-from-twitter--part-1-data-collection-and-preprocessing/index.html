@@ -1,0 +1,577 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Machine Learning Flashcards from Twitter -- Part 1 Data Collection and Preprocessing</title>
+  <meta property="og:title" content="Machine Learning Flashcards from Twitter -- Part 1 Data Collection and Preprocessing" />
+  <meta name="twitter:title" content="Machine Learning Flashcards from Twitter -- Part 1 Data Collection and …" />
+  <meta name="description" content="I was searching the net for mlflashcards, I found this incredible machine learning flashcard tweet series from Chris Albon.
+It looks pretty and covers a lot of ground, Got a thought &ndash; why not download them for later use?
+I thought it would be a fun exercise to start the weekend and jumped into action.
+Step 1 &ndash; Collect/Scrape data from twitter
+I evaluated using twitter api using tweetpy, but it has its own limitation aka we can search only a week worth of data which is not good for our use case.
+We shoud be able to get data spread across months since the tweets we are interested are spread across a wide time range.">
+  <meta property="og:description" content="I was searching the net for mlflashcards, I found this incredible machine learning flashcard tweet series from Chris Albon.
+It looks pretty and covers a lot of ground, Got a thought &ndash; why not download them for later use?
+I thought it would be a fun exercise to start the weekend and jumped into action.
+Step 1 &ndash; Collect/Scrape data from twitter
+I evaluated using twitter api using tweetpy, but it has its own limitation aka we can search only a week worth of data which is not good for our use case.
+We shoud be able to get data spread across months since the tweets we are interested are spread across a wide time range.">
+  <meta name="twitter:description" content="I was searching the net for mlflashcards, I found this incredible machine learning flashcard tweet series from Chris Albon.
+It looks pretty and covers a lot of ground, Got a thought &ndash; why not …">
+  <meta name="author" content=""/>
+  <link href='http://localhost:1313/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="http://localhost:1313/img/avatar-favicon.png" />
+  <meta name="twitter:image" content="http://localhost:1313/img/avatar-favicon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="http://localhost:1313/posts/2018/02/09/machine-learning-flashcards-from-twitter--part-1-data-collection-and-preprocessing/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TUTYSARA&#39;S SPACE" />
+
+  <meta name="generator" content="Hugo 0.148.2">
+ 
+<link rel="canonical" href="http://localhost:1313/posts/2018/02/09/machine-learning-flashcards-from-twitter--part-1-data-collection-and-preprocessing/" />
+  
+  
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="TUTYSARA&#39;S SPACE">
+  
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="http://localhost:1313/css/staticman.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" />
+  
+  <style>
+  pre.highlight, .highlight > pre, td.code pre { 
+    border-left: 2px solid #76a2a9;
+  }     
+</style>
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+</head>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">TUTYSARA&#39;S SPACE</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+	
+	  <li>
+		<form class="navbar-form" role="search" action="http://www.google.com/search" method="get">
+			<div class="input-group">
+				<input class="form-control" type="search" placeholder="Search..." name="q" id="search">
+				<input value="http://www.tutysara.net" name="sitesearch" type="hidden">
+			</div>
+		</form>
+	</li>
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="TUTYSARA&#39;S SPACE" href="http://localhost:1313/">
+            <img class="avatar-img" src="http://localhost:1313/img/avatar-favicon.png" alt="TUTYSARA&#39;S SPACE" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+  <div id="modalSearch" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search TUTYSARA&#39;S SPACE</h4>
+        </div>
+        <div class="modal-body">
+          <gcse:search></gcse:search>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Machine Learning Flashcards from Twitter -- Part 1 Data Collection and Preprocessing</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 9, 2018
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;min
+  
+  
+  
+    
+      
+        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;tutysara
+      
+    
+  &nbsp;|&nbsp;<i class="fas fa-comment"></i>&nbsp;
+    
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>I was searching the net for mlflashcards, I found this incredible machine learning flashcard <a href="https://twitter.com/search?q=machinelearningflashcards.com%20and%20chrisalbon%20&amp;src=typd">tweet series</a> from <a href="https://twitter.com/chrisalbon">Chris Albon</a>.
+It looks pretty and covers a lot of ground, Got a thought &ndash; why not download them for later use?
+I thought it would be a fun exercise to start the weekend and jumped into action.</p>
+<h2 id="step-1--collectscrape-data-from-twitter">Step 1 &ndash; Collect/Scrape data from twitter</h2>
+<p>I evaluated using twitter api using <a href="https://github.com/tweepy/tweepy">tweetpy</a>, but it has its own limitation aka we can search only a week worth of data which is not good for our use case.
+We shoud be able to get data spread across months since the tweets we are interested are spread across a wide time range.</p>
+<p>So, the next step is to try scraping. We got <a href="https://github.com/taspinar/twitterscraper">twitterscraper</a> to our rescue here.
+Scraping was an one step painless process with this tool.</p>
+<p>Install it using</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install twitterscraper
+</span></span></code></pre></div><p>Scrape the data matching a query using</p>
+<pre><code>twitterscraper &quot;machinelearningflashcards.com  from:chrisalbon&quot; -o mlflashcards_tweets_large.json
+</code></pre>
+<p>The data is scraped and stored in a json file. The next step is preprocessing.</p>
+<h2 id="step-2--preprcessing">Step 2 &ndash; Preprcessing</h2>
+<p>Here we want to preprocess the data to learn about it and to process further. We will convert the data from json and read it into a dataframe.</p>
+<h3 id="21-read-the-data">2.1 Read the data</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> codecs<span style="color:#f92672">,</span> json
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> codecs<span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#39;mlflashcards_tweets_large.json&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>, <span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>	tweets <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>load(f, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>)
+</span></span></code></pre></div><p>Look at a sample data</p>
+<pre><code>t = tweets[5]
+t
+</code></pre>
+<p>output</p>
+<pre><code>{'fullname': 'Chris Albon',
+ 'id': '960977759915851776',
+ 'likes': '6',
+ 'replies': '2',
+ 'retweets': '1',
+ 'text': 'Alpha In Ridge Regression https://machinelearningflashcards.com\xa0pic.twitter.com/DFdSKO7DiH',
+ 'timestamp': '2018-02-06T20:45:26',
+ 'url': '/chrisalbon/status/960977759915851776',
+ 'user': 'chrisalbon'}
+</code></pre>
+<h3 id="22-write-and-test-few-utility-methods-to-extract-data">2.2 Write and test few utility methods to extract data</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">## get full tweet url</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_tweet_url</span>(tweet):
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;https://twitter.com&#39;</span> <span style="color:#f92672">+</span> tweet[<span style="color:#e6db74">&#39;url&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#test</span>
+</span></span><span style="display:flex;"><span>tweet_url <span style="color:#f92672">=</span> get_tweet_url(t)
+</span></span><span style="display:flex;"><span>print(tweet_url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output: https://twitter.com/chrisalbon/status/960977759915851776</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## get tweet text (text without url)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_tweet_text</span>(tweet):
+</span></span><span style="display:flex;"><span>    text <span style="color:#f92672">=</span> tweet[<span style="color:#e6db74">&#39;text&#39;</span>]
+</span></span><span style="display:flex;"><span>    res <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;(.*) https.*&#39;</span>, text)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> res:
+</span></span><span style="display:flex;"><span>        text <span style="color:#f92672">=</span> res<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        text <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> text
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#test</span>
+</span></span><span style="display:flex;"><span>get_tweet_text(t)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output: &#39;Alpha In Ridge Regression&#39;</span>
+</span></span></code></pre></div><h3 id="23-convert-to-dataframe">2.3 Convert to dataframe</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rows <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> tweet <span style="color:#f92672">in</span> tweets[:]:
+</span></span><span style="display:flex;"><span>    row <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;id&#34;</span>: tweet[<span style="color:#e6db74">&#39;id&#39;</span>],
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;likes&#34;</span>: tweet[<span style="color:#e6db74">&#39;likes&#39;</span>],
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;replies&#34;</span>: tweet[<span style="color:#e6db74">&#39;replies&#39;</span>],
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;retweets&#34;</span>: tweet[<span style="color:#e6db74">&#39;retweets&#39;</span>],
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;timestamp&#34;</span>: tweet[<span style="color:#e6db74">&#39;timestamp&#39;</span>],
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;url&#34;</span>: get_tweet_url(tweet),
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;text&#34;</span>: get_tweet_text(tweet)}
+</span></span><span style="display:flex;"><span>rows<span style="color:#f92672">.</span>append(row)
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame<span style="color:#f92672">.</span>from_dict(rows)
+</span></span><span style="display:flex;"><span>df
+</span></span></code></pre></div><p>looks something like this</p>
+<pre><code> 	id 	likes 	replies 	retweets 	text 	timestamp 	url
+0 	892802102702911488 	1 	0 	1 	None 	2017-08-02T17:39:43 	https://twitter.com/chrisalbon/status/89280210...
+1 	961698946698567680 	5 	0 	0 	Threshold Activation 	2018-02-08T20:31:11 	https://twitter.com/chrisalbon/status/96169894...
+2 	961666291189743616 	23 	0 	5 	Chi-Squared 	2018-02-08T18:21:25 	https://twitter.com/chrisalbon/status/96166629...
+</code></pre>
+<h3 id="24-extract-image-url-from-tweet-url">2.4 Extract image url from tweet url</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_img_url</span>(tweet_url):
+</span></span><span style="display:flex;"><span>    page_data <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(tweet_url)<span style="color:#f92672">.</span>text
+</span></span><span style="display:flex;"><span>    res <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;data-image-url=&#34;(.*)&#34;&#39;</span>, page_data)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> res:
+</span></span><span style="display:flex;"><span>        img_url <span style="color:#f92672">=</span> res<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        img_url <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> img_url
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#test</span>
+</span></span><span style="display:flex;"><span>get_img_url(tweet_url)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output: &#39;https://pbs.twimg.com/media/DViGZR3VoAAAoNf.png&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;img_url&#39;</span>] <span style="color:#f92672">=</span> [get_img_url(tweet_url)  <span style="color:#66d9ef">for</span> tweet_url <span style="color:#f92672">in</span> df<span style="color:#f92672">.</span>url]
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>tail()
+</span></span></code></pre></div><p>looks something like this</p>
+<pre><code> 	id 	likes 	replies 	retweets 	text 	timestamp 	url 	img_url
+236 	946078250698018816 	19 	1 	0 	Bayes Error 	2017-12-27T18:00:06 	https://twitter.com/chrisalbon/status/94607825... 	https://pbs.twimg.com/media/DSElJ54VQAEtuvF.png
+237 	945751084974333952 	47 	3 	13 	Occams Razor 	2017-12-26T20:20:04 	https://twitter.com/chrisalbon/status/94575108... 	https://pbs.twimg.com/media/DR_7mSwV4AAw6ZW.png
+238 	945717937234591744 	8 	0 	1 	K-Fold Cross-Validation 	2017-12-26T18:08:21 	https://twitter.com/chrisalbon/status/94571793... 	https://pbs.twimg.com/mediDR_dc5RVAAAMkcK.png
+</code></pre>
+<h2 id="step-3--write-to-csv">Step 3 &ndash; Write to csv</h2>
+<pre><code>Its time to save it to csv for further processing
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#34;chrisalbon_mlflashcards.csv&#34;</span>)
+</span></span></code></pre></div><p>By this time I got other ideas to test. Instead of just downloading the images, I wanted to anaylze the tweets to know more about it using the data we have.</p>
+<p>The result is we are going to split this post into two parts where the next post will contain details on the analyis and code to download images. It will be published when the analysis is complete, let me go work on it. See you till then.</p>
+<p>***Update 02/21 &ndash; source code for this reop can be found <a href="https://github.com/tutysara/chrisablon-mlflashcards">here</a></p>
+
+
+        
+          <div class="blog-tags">
+            
+              
+              <a href="http://localhost:1313/tags/machine-learning/">machine learning</a>&nbsp;
+            
+              
+              <a href="http://localhost:1313/tags/python/">python</a>&nbsp;
+            
+              
+              <a href="http://localhost:1313/tags/twitter/">twitter</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/2018/02/07/themes-and-extensions-for-jupyter-notebook/" data-toggle="tooltip" data-placement="top" title="Themes and Extensions for Jupyter notebook">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/2018/02/11/machine-learning-flashcards-from-twitter--part-2-data-analysis-and-download/" data-toggle="tooltip" data-placement="top" title="Machine Learning Flashcards from Twitter -- Part 2 Data Analysis and Download">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+      
+      
+      
+      
+        
+          <div class="staticman-comments">
+            <section class="js-comments staticman-comments">
+
+  
+
+  
+
+
+
+<form class="js-form form" method="post" action="https://api.staticman.net/v2/entry/tutysara/tutysara.net.comments/master/comments">
+  <input type="hidden" name="options[slug]" value="posts20180209machine-learning-flashcards-from-twitter--part-1-data-collection-and-preprocessing">
+  <input type="hidden" name="options[parent]" value="">
+
+  
+
+  <fieldset>
+  <div class="textfield">
+    <textarea name="fields[comment]" type="text" placeholder="You can use Markdown syntax"></textarea>
+  </div>
+  </fieldset>
+
+  <fieldset>
+    <div class="textfield">
+      <input name="fields[name]" type="text" placeholder="Your name"/>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class="textfield">
+      <input type="email" name="fields[email]"  placeholder="Your email address"/>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class="textfield">
+      <input type="text" name="fields[website]"  placeholder="Your website"/>
+    </div>
+  </fieldset>
+
+  
+
+  <fieldset>
+    <button class="button">
+      Submit
+    </button>
+  </fieldset>
+</form>
+</section>
+
+<article class="modal">
+  <div class="title">
+    <h2 class="js-modal-title"></h2>
+  </div>
+  <div class="js-modal-text"></div>
+  <div>
+    <button class="js-close-modal">Close</button>
+  </div>
+</article>
+
+          </div>
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2018
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">TUTYSARA&#39;S SPACE</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.148.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/staticman.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+<script>
+  (function() {
+    var cx = 'true';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

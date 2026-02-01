@@ -1,27 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data on TUTYSARA&#39;S SPACE</title>
-    <link>http://www.tutysara.net/tags/data/</link>
+    <link>http://localhost:1313/tags/data/</link>
     <description>Recent content in Data on TUTYSARA&#39;S SPACE</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-EN</language>
-    <managingEditor>tutysara at google mail.com (tutysara)</managingEditor>
-    <webMaster>tutysara at google mail.com (tutysara)</webMaster>
     <copyright>(c) 2018 tutysara</copyright>
     <lastBuildDate>Fri, 05 Oct 2012 11:16:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.tutysara.net/tags/data/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="http://localhost:1313/tags/data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Correlation between INR values of different currencies</title>
-      <link>http://www.tutysara.net/posts/2012/10/05/correlation-between-inr-values-of-different-currencies/</link>
+      <link>http://localhost:1313/posts/2012/10/05/correlation-between-inr-values-of-different-currencies/</link>
       <pubDate>Fri, 05 Oct 2012 11:16:00 +0000</pubDate>
-      <author>tutysara at google mail.com (tutysara)</author>
-      <guid>http://www.tutysara.net/posts/2012/10/05/correlation-between-inr-values-of-different-currencies/</guid>
-      <description>Correlation between INR values of different currencies 2012-09-05 11:31  data clojure     This is an interesting take away example from the class which Anand is teaching at NIAS. Here we are trying to correlate between the INR values of various currencies like AUD, CNY (Chinese Yen), EUR, GBP (Great Britain Pound), JPY, SGD, USD and find the positive or negative correlations. The focus is on data collection and transformation.</description>
+      <guid>http://localhost:1313/posts/2012/10/05/correlation-between-inr-values-of-different-currencies/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;pre&gt;&lt;code&gt;&amp;lt;script src=&amp;quot;https://gist.github.com/3638650.js?file=data2_url.sh&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&#xA;&amp;lt;br/&amp;gt;&#xA;Here we can find that SGD is the currency that is being used, with&#xA;little exprimentation it can be found that we can download data&#xA;for other currencies by altering this URL (example - replace SGD&#xA;with JPY for downloading data for Japanese yen)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
   </channel>
 </rss>

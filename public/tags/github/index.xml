@@ -1,28 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on TUTYSARA&#39;S SPACE</title>
-    <link>http://www.tutysara.net/tags/github/</link>
+    <link>http://localhost:1313/tags/github/</link>
     <description>Recent content in Github on TUTYSARA&#39;S SPACE</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-EN</language>
-    <managingEditor>tutysara at google mail.com (tutysara)</managingEditor>
-    <webMaster>tutysara at google mail.com (tutysara)</webMaster>
     <copyright>(c) 2018 tutysara</copyright>
     <lastBuildDate>Sun, 02 Sep 2012 16:14:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.tutysara.net/tags/github/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="http://localhost:1313/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Started blogging from a new place</title>
-      <link>http://www.tutysara.net/posts/2012/09/02/started-blogging-from-a-new-place/</link>
+      <link>http://localhost:1313/posts/2012/09/02/started-blogging-from-a-new-place/</link>
       <pubDate>Sun, 02 Sep 2012 16:14:00 +0000</pubDate>
-      <author>tutysara at google mail.com (tutysara)</author>
-      <guid>http://www.tutysara.net/posts/2012/09/02/started-blogging-from-a-new-place/</guid>
-      <description>I have been thinking about having a professional looking blog/space for some time. I noticed many people I follow on github maintaining a neat blog, I see that many of them use jekyll/ octopress and use github pages for hosting. I like the concept of static blogging and wanted to give it a try. 
-  I gone through the process and it looks neat and clean, create a github repo with your username and drop html pages into it and github takes care of serving them, damm simple.</description>
+      <guid>http://localhost:1313/posts/2012/09/02/started-blogging-from-a-new-place/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
   </channel>
 </rss>

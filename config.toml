@@ -21,8 +21,8 @@ theme = "theme-beautifulhugo"
 googleAnalytics = "UA-34510369-1"
 
 # Pagination
-paginate = 3
-paginatePath = "page"
+pagination.pagerSize = 3
+pagination.path = "page"
 
 # Enable Disqus integration
 #disqusShortname = "tutysarablog"

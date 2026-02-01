@@ -1,62 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Machine Learning on TUTYSARA&#39;S SPACE</title>
-    <link>http://www.tutysara.net/tags/machine-learning/</link>
+    <link>http://localhost:1313/tags/machine-learning/</link>
     <description>Recent content in Machine Learning on TUTYSARA&#39;S SPACE</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-EN</language>
-    <managingEditor>tutysara at google mail.com (tutysara)</managingEditor>
-    <webMaster>tutysara at google mail.com (tutysara)</webMaster>
     <copyright>(c) 2018 tutysara</copyright>
     <lastBuildDate>Sun, 11 Feb 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.tutysara.net/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="http://localhost:1313/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Machine Learning Flashcards from Twitter -- Part 2 Data Analysis and Download</title>
-      <link>http://www.tutysara.net/posts/2018/02/11/machine-learning-flashcards-from-twitter----part-2-data-analysis-and-download/</link>
+      <link>http://localhost:1313/posts/2018/02/11/machine-learning-flashcards-from-twitter--part-2-data-analysis-and-download/</link>
       <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
-      <author>tutysara at google mail.com (tutysara)</author>
-      <guid>http://www.tutysara.net/posts/2018/02/11/machine-learning-flashcards-from-twitter----part-2-data-analysis-and-download/</guid>
-      <description>This is the analysis part where we do a small analysis to find
- Which are the most important/popular tweets Whether older materials covered important concepts than recent tweets  Load the necessary libs %load_ext autoreload %autoreload 2 %matplotlib inline import pandas as pd pd.set_option(&amp;quot;display.width&amp;quot;, 150) import requests import re import matplotlib.pyplot as plt import matplotlib.image as mpimg from pathlib import Path  Load csv df = pd.read_csv(&amp;quot;chrisalbon_mlflashcards.csv&amp;quot;) df[&#39;text&#39;].fillna(&#39;&#39;, inplace=True)  df.</description>
+      <guid>http://localhost:1313/posts/2018/02/11/machine-learning-flashcards-from-twitter--part-2-data-analysis-and-download/</guid>
+      <description>&lt;p&gt;This is the analysis part where we do a small analysis to find&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Which are the most important/popular tweets&lt;/li&gt;&#xA;&lt;li&gt;Whether older materials covered important concepts than recent tweets&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;load-the-necessary-libs&#34;&gt;Load the necessary libs&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;load_ext autoreload&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;autoreload &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;matplotlib inline&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_option(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;display.width&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;150&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; requests&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; re&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; matplotlib.pyplot &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; plt&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; matplotlib.image &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; mpimg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; pathlib &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; Path &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;load-csv&#34;&gt;Load csv&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;chrisalbon_mlflashcards.csv&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;text&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fillna(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;, inplace&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tail()&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; id  likes  replies  retweets            text       timestamp             url         img_url&#xA;236  94607825069...     19        1         0     Bayes Error  2017-12-27T...  https://twi...  https://pbs...&#xA;237  94575108497...     47        3        13    Occams Razor  2017-12-26T...  https://twi...  https://pbs...&#xA;238  94571793723...      8        0         1  K-Fold Cros...  2017-12-26T...  https://twi...  https://pbs...&#xA;239  94538342129...     18        1         1         Extrema  2017-12-25T...  https://twi...  https://pbs...&#xA;240  94536381783...     34        1         7  Softmax Act...  2017-12-25T...  https://twi...  https://pbs...&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;check-for-missing-values&#34;&gt;Check for missing values&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;count(axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;id           241&#xA;likes        241&#xA;replies      241&#xA;retweets     241&#xA;text         241&#xA;timestamp    241&#xA;url          241&#xA;img_url      237&#xA;dtype: int64&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;We see we have few img_urls missing. Let&amp;rsquo;s check what they are&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Machine Learning Flashcards from Twitter -- Part 1 Data Collection and Preprocessing</title>
-      <link>http://www.tutysara.net/posts/2018/02/09/machine-learning-flashcards-from-twitter----part-1-data-collection-and-preprocessing/</link>
+      <link>http://localhost:1313/posts/2018/02/09/machine-learning-flashcards-from-twitter--part-1-data-collection-and-preprocessing/</link>
       <pubDate>Fri, 09 Feb 2018 00:00:00 +0000</pubDate>
-      <author>tutysara at google mail.com (tutysara)</author>
-      <guid>http://www.tutysara.net/posts/2018/02/09/machine-learning-flashcards-from-twitter----part-1-data-collection-and-preprocessing/</guid>
-      <description>I was searching the net for mlflashcards, I found this incredible machine learning flashcard tweet series from Chris Albon. It looks pretty and covers a lot of ground, Got a thought &amp;ndash; why not download them for later use? I thought it would be a fun exercise to start the weekend and jumped into action.
-Step 1 &amp;ndash; Collect/Scrape data from twitter I evaluated using twitter api using tweetpy, but it has its own limitation aka we can search only a week worth of data which is not good for our use case.</description>
+      <guid>http://localhost:1313/posts/2018/02/09/machine-learning-flashcards-from-twitter--part-1-data-collection-and-preprocessing/</guid>
+      <description>&lt;p&gt;I was searching the net for mlflashcards, I found this incredible machine learning flashcard &lt;a href=&#34;https://twitter.com/search?q=machinelearningflashcards.com%20and%20chrisalbon%20&amp;amp;src=typd&#34;&gt;tweet series&lt;/a&gt; from &lt;a href=&#34;https://twitter.com/chrisalbon&#34;&gt;Chris Albon&lt;/a&gt;.&#xA;It looks pretty and covers a lot of ground, Got a thought &amp;ndash; why not download them for later use?&#xA;I thought it would be a fun exercise to start the weekend and jumped into action.&lt;/p&gt;&#xA;&lt;h2 id=&#34;step-1--collectscrape-data-from-twitter&#34;&gt;Step 1 &amp;ndash; Collect/Scrape data from twitter&lt;/h2&gt;&#xA;&lt;p&gt;I evaluated using twitter api using &lt;a href=&#34;https://github.com/tweepy/tweepy&#34;&gt;tweetpy&lt;/a&gt;, but it has its own limitation aka we can search only a week worth of data which is not good for our use case.&#xA;We shoud be able to get data spread across months since the tweets we are interested are spread across a wide time range.&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>Deep Down the Decision Tree</title>
-      <link>http://www.tutysara.net/posts/2018/02/07/deep-down-the-decision-tree/</link>
-      <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
-      <author>tutysara at google mail.com (tutysara)</author>
-      <guid>http://www.tutysara.net/posts/2018/02/07/deep-down-the-decision-tree/</guid>
-      <description>Understanding How the split is made and the algorithms covered. I am taking the wonderful fast.ai (http://course.fast.ai/) course thought by Jermey Howard and Rachel. DecisionTrees (RandomForest) is covered in the second video (link)  Where they discuss on how the split is made</description>
-    </item>
-    
-    <item>
-      <title>Useful Functions in Fastai library</title>
-      <link>http://www.tutysara.net/posts/2018/02/07/useful-functions-in-fastai-library/</link>
-      <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
-      <author>tutysara at google mail.com (tutysara)</author>
-      <guid>http://www.tutysara.net/posts/2018/02/07/useful-functions-in-fastai-library/</guid>
-      <description>Here are some useful functions from fastai library ordered by the lessons in which they are covered
- Video 1
- Notebook &amp;ndash; link
- train_cat()
- proc_df()
-  Video 2
- draw_tree()    </description>
-    </item>
-    
   </channel>
 </rss>
