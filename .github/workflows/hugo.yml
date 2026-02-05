@@ -48,7 +48,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.ACTION_DEPLOY_KEY }} # Use the secret you created
+          github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }} # Use the secret you created
           external_repository: tutysara/tutysara.github.com # The destination repository
           publish_branch: master # The branch in the destination repo (usually 'main' or 'gh-pages')
           publish_dir: ./public # The directory containing the static files
