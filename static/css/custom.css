@@ -1,0 +1,6 @@
+.pswp__button--arrow--left {
+    display: none; /* hide PhotoSwipe left arrow */
+}
+.pswp__button--arrow--right {
+    display: none; /* hide PhotoSwipe right arrow */
+}
