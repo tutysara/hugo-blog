@@ -1,12 +1,6 @@
 [submodule "github.com/themes/blackburn"]
 	path = github.com/themes/blackburn
 	url = https://github.com/yoshiharuyamashita/blackburn.git
-[submodule "themes/blackburn"]
-	path = themes/blackburn
-	url = https://github.com/yoshiharuyamashita/blackburn.git
-[submodule "themes/themes/beautifulhugo"]
-	path = themes/themes/beautifulhugo
-	url = https://github.com/halogenica/beautifulhugo.git
 [submodule "themes/beautifulhugo"]
 	path = themes/beautifulhugo
 	url = https://github.com/halogenica/beautifulhugo.git
