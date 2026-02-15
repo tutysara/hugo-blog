@@ -50,6 +50,8 @@ pygmentsStyle = "trac"
     comments = true
     readingTime = true
     gcse = true
+    copyright = "© 2026 Tutysara. All rights reserved."
+
 
 [Author]
     name = "tutysara"
