@@ -1,11 +1,11 @@
 # hostname (and path) to the root eg. http://spf13.com/
-baseurl = "http://www.tutysara.net/"
+baseurl = "https://www.tutysara.net/"
 
 # Site title
 title = "TUTYSARA'S SPACE"
 
 # Copyright
-copyright = "(c) 2018 tutysara"
+copyright = "(c) 2026 tutysara"
 
 # Language
 languageCode = "en-EN"
